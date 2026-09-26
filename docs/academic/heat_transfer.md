@@ -6,7 +6,7 @@ They are presented here as seperate documents, because that was how I created th
 
 ### Midterm Exam I
 <iframe
-    src=""
+    src="./academic_showcase/heat_transfer/heat_transfer_exam_1.pdf"
     width="100%"
     height="800px"
     style="border: none;">
@@ -14,7 +14,7 @@ They are presented here as seperate documents, because that was how I created th
 
 ### Midterm Exam II
 <iframe
-    src=""
+    src="./academic_showcase/heat_transfer/heat_transfer_exam_2.pdf"
     width="100%"
     height="800px"
     style="border: none;">
@@ -22,10 +22,10 @@ They are presented here as seperate documents, because that was how I created th
 
 ### Final Exam
 <iframe
-    src=""
+    src="./academic_showcase/heat_transfer/heat_transfer_final.pdf"
     width="100%"
     height="800px"
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub]()
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/heat_transfer)

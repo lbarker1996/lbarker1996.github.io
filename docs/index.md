@@ -20,5 +20,6 @@ The working title of my dissertation is "*Linear Modeling and Model-based Manipu
 
 
 ### Recent Posts
+- [Senior Design](academic/senior_design.md)
 - [Formula Sheets](academic/formula_sheets.md)
 - [German Whispers](personal/sudoku.md#german-whispers)

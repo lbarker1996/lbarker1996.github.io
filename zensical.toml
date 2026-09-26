@@ -17,7 +17,8 @@ nav = [
     "professional/contact.md"
   ] },
   { "Academic" = [
-    "academic/formula_sheets.md"
+    "academic/formula_sheets.md",
+    "academic/senior_design.md"
   ] },
   { "Personal" = [
     "personal/sudoku.md"

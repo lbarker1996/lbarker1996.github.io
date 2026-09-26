@@ -29,6 +29,9 @@ I do however claim credit for every falsehood and typo included.
 - [Intro to Astrodynamics](intro_to_astrodynamics.md)
 
 
+
+Here is the template I eventually settled into, as a minimum working example.
+
 - [Formula Sheet Template](formula_sheet_template.md)
 
 

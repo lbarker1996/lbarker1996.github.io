@@ -1,0 +1,3 @@
+[submodule "docs/academic/academic_showcase"]
+	path = docs/academic/academic_showcase
+	url = https://github.com/lbarker1996/academic_showcase

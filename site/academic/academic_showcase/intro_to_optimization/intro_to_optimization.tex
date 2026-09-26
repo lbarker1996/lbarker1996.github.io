@@ -1,0 +1,452 @@
+\documentclass[twocolumn,12pt]{article}    % two-column because cheat sheets fit like that
+\usepackage{preamble}
+\newcommand\coursename{Intro to Optimization}
+\newcommand\Def{\text{\textbf{Def.}} \hspace{5pt}}
+\newcommand \rn {\mathds{R}^n}
+\newcommand \hfive {\hspace{5pt}}
+
+\begin{document}
+\footnotesize % small because, it's a cheat sheet after all, why not cram it
+\subsection*{1st Half}
+\begin{equation*}
+    \|\cdot\| : \mathds{R}^n \hspace{-3pt} \to \hspace{-3pt} \mathds{R} \, s. t:\, \|\Vec{x}\| \geq 0, \, \|\lambda \Vec{x}\| = |\lambda| \|\Vec{x}\|, \, \|\Vec{x}+\Vec{y}\| \leq \|\Vec{x}\| +\|\Vec{y}\|
+\end{equation*}
+\begin{equation*}
+    |\Vec{x}^T\Vec{y}| \leq \|\Vec{x}\|_2 \|\Vec{y}\|_2   \, (C.S.)\hspace{7pt} \mathds{R}^n_+ = \{\mathds{R}^n \geq0\}  \hspace{7pt} \mathds{R}^n_{++} = \{\mathds{R}^n > 0\}
+\end{equation*}
+\begin{equation*}
+    \Delta_n  = \{\Vec{x} \in \mathds{R}^n : x_i\geq 0 \forall i \in \{1,...,n\},\, \Vec{1}^T\vec{x} = 1\}
+\end{equation*}
+\begin{equation*}
+    B(\vec{c},\,r) = \{\vec{x} \in \mathds{R}^n : \|\vec{x} -\vec{c}\| < r\} \hspace{20pt} \text{// open( ), closed[ ]}
+\end{equation*}
+
+\vspace{-20pt} 
+\begin{equation*}
+    \left\|\Vec{x}\right\|_p \triangleq \left( \sum^n_{i=1} |x_i|^p\right)^{1/p} \hspace{10pt}  \|A\|_F =  \sqrt{\Sigma_{i}\Sigma_{j} |A_{ij}|} 
+\end{equation*}
+\begin{equation*}
+    \|A\Vec{x}\|_b \leq \|A\|_{a,b} \|\Vec{x}\|_a \hspace{7.5pt} \text{w/} \hspace{7.5pt} \ \|A\|_{a,b} = \max_{\Vec{x} \in \mathds{R}^n} \{\|A\Vec{x}\|_b : \|\Vec{x}\|_1 \leq 1\}
+\end{equation*}
+\begin{equation*}
+    \|A\|_2 = \|A\|_{2,2} = \sqrt{\lambda_{\max}(A^TA)} = \sigma_{\max}(A) \hspace{5pt} \text{// spectral norm}
+\end{equation*}
+\begin{equation*}
+    \|A\|_1 = \max_{i=1,...,n} \left\{\text{col. sums}\right\} \hspace{19pt} \|A\|_\infty = \max_{j=1,...,n} \left\{\text{row. sums}\right\}
+\end{equation*}
+\begin{equation*}
+      R_{A}(\vec{x}\neq 0 ) =\frac{\vec{x}^TA\vec{x}}{\vec{x}^T\vec{x}}\hspace{30pt} \lambda_{\min}(A) \leq R_{A}(\vec{x}\neq0)\leq \lambda_{\max}(A) 
+\end{equation*}
+\begin{equation*}
+      \lambda_{\min}(A) = \min_{\vec{x}\neq0} R_{A}(\vec{x}) \hspace{19pt} \lambda_{\max}(A) = \max_{\vec{x}\neq0} R_{A}(\vec{x})
+\end{equation*}
+\begin{equation*}
+     f'(\vec{x};\, \vec{d}_i) = \lim_{t\to0^+} \frac{f(\vec{x} +t \vec{d}_i) -f(\vec{x})}{t} = \nabla f(\vec{x})^T \vec{d} \hspace{5.5pt} \text{// dir. deriv.}
+\end{equation*}
+\begin{equation*}
+    \nabla f(\Vec{x}) = \begin{bmatrix} \frac{\partial{f}}{\partial{x_1}}\\ \vdots \\ \frac{\partial{f}}{\partial{x_n}} \end{bmatrix} 
+    \in \mathds{R}^n \hspace{10pt}
+    \nabla^2 f(\vec{x}) = \begin{bmatrix}
+        | & & |\\
+        \nabla f_1 & \dots & \nabla f_n\\
+        | & & |\\
+    \end{bmatrix} \in \mathds{R}^{n \times n}
+\end{equation*}
+\begin{align*}
+    \text{TS} \hfive f(\vec{y}) = &f(\vec{x}) + \nabla f(\vec{x})^T(\vec{y}-\vec{x}) \\
+    &+ \underbrace{\frac{1}{2} (\vec{y}-\vec{x})^T \nabla^2 f(\Vec{x}) (\vec{y}-\vec{x})}_{=o\|\vec{y}-\vec{x}\| \text{ for lin. approx}} + \underbrace{o\left( \|\vec{y} -\vec{x}\| ^2 \right)}_{\text{quad. approx}}
+\end{align*}
+\begin{equation*}
+    f(\vec{x}^* + \vec{d}) = f(\vec{x}^*) + \hspace{-5pt}
+    \underbrace{\nabla f(\vec{x}^*)\vec{d}}_{= 0 \text{ if stat. pt.}} \hspace{-5pt} + \frac{1}{2}\vec{d}^T\nabla^2f(\vec{x}^*) \vec{d} + o (\|\vec{d}\|^2 )
+\end{equation*}
+\begin{equation*}
+    \lim_{\|\vec{x}\| \to \infty} f(\vec{x}) =\infty \implies \nabla^2f(\vec{x}) \succ 0 \hspace{25pt} \text{// Coercive} 
+\end{equation*}
+\noindent \underline{Necessary 2\(^{\text{nd}}\) Order Optimality}
+\begin{equation*}
+    \text{if } \vec{x}^* \text{ is \textbf{local} min, then } \nabla^2f(\vec{x}^*) \succeq 0 \hspace{10pt} \textbf{local} \max \text{if} \preceq 0
+\end{equation*}
+\noindent \underline{Sufficient 2\(^{\text{nd}}\) Order Optimality}
+\begin{equation*}
+    \text{if } \nabla^2 f(\vec{x}^*) \succ 0 \text{ then } \vec{x}^* \text{ is \textbf{strict local} min} \hspace{10pt} \max \text{if} \prec 0
+\end{equation*}
+\begin{equation*}
+    \text{if } \nabla^2 f(\vec{x}^*) \text{ is indef. then } \vec{x}^* \text{ is a \textbf{saddle}}
+\end{equation*}
+\noindent\underline{Global Optimality}
+\begin{equation*}
+    \text{if } \nabla^2f(\vec{x}^*) \succeq 0,\, \forall \vec{x},\,\vec{x}^*= \text{stat. pt, then } \vec{x}^* \text{ is \textbf{global} min} 
+\end{equation*}
+\begin{equation*}
+    \text{if } \exists m>0 \, \text{s.t. } \nabla^2 f(\vec{x}) \succ mI, \, \forall \vec{x} \text{ then:} 
+\end{equation*}
+\begin{equation*}
+    f(\vec{x}) \geq f(\vec{x}^*) + \frac{m}{2} \underbrace{ \|\vec{x} - \vec{x}^*\|^2}_{\text{bowl above } f(\vec{x}^*)} \geq f(\vec{x}^*)
+\end{equation*}\vspace{-10pt}
+\begin{equation*}
+    \overbrace{A\vec{x} = \vec{b} \hspace{20pt} A\in\mathds{R}^{m\times n } }^{\text{Least Squares}} \hspace{20pt} \begin{cases}
+        &m>n\, \text{overdetermined } \\
+        &m<n \, \text{underdetermined} 
+    \end{cases}
+\end{equation*}\vspace{-10pt}
+\begin{equation*}
+    \min_{\vec{x} \in \mathds{R}^n} \overbrace{\|A\vec{x} - \vec{b}\|_2^2}^{\text{residuals}} \implies \vec{x}^TA^T A\vec{x} - 2\vec{b}^TA\vec{x} - \vec{b}^T\vec{b}
+\end{equation*}
+\begin{equation*}
+    \nabla_x(\cdot) =0 \implies A^TA \vec{x} = A^T\vec{b} \hspace{30pt} \text{// Normal eqs}
+\end{equation*}
+\begin{equation*}
+    \text{if } m>n,\, A^TA \succ 0 \implies \vec{x} = (A^TA)^{-1} A^T \vec{b}
+\end{equation*}
+\begin{equation*}
+    f(x) = ax^2 +bx +c\implies \begin{bmatrix}
+        x_1^2 & x_1 & 1 \\
+        \vdots & \vdots & \vdots \\
+        x_m^2 & x_m & 1
+    \end{bmatrix} \begin{bmatrix}
+        a\\b\\c
+    \end{bmatrix} = \begin{bmatrix}
+        y_1 \\ \vdots \\ y_m
+    \end{bmatrix}
+\end{equation*}
+\noindent\underline{Gradient Method} \hspace{100pt} Converges linearly
+\begin{equation*}
+    \textbf{def. } \vec{d} \in \mathds{R}^n \text{ is descent dir. of } f \text{ at } \vec{x} \text{ if } \begin{cases}
+        &\nabla f(\vec{x})^T\vec{d} <0\\
+        & \nabla f(\vec{x};\,\vec{d}) <0
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    \begin{matrix}
+        \text{gradient w/ exact}\\
+        \text{line search satisfies}
+    \end{matrix} \, f(\vec{x}_{k+1}) \leq \left(\frac{\kappa -1}{\kappa+1}\right)^2 f(\vec{x}_k),\hspace{5pt}
+    \kappa = \frac{\lambda_{\max}(A)}{\lambda_{\min}(A)}
+\end{equation*}
+\begin{equation*}
+    \text{if } f\in C^1(\mathds{R}^n), \text{ bounded below, and} \nabla f(\vec{x}) \in C_L^{1,1},\, L,M>0:
+\end{equation*}
+\begin{equation*}\begin{matrix}
+    f \text{ flattens}\\ \text{ as }k\to\infty \hspace{10pt}
+\end{matrix}
+    \begin{cases}
+    & f(\vec{x}_k) - f(\vec{x}_{k+1}) \geq M\| \nabla f(\vec{x}_k) \|^2 \geq 0 \\
+    & \min_{k=0,..n} \| \nabla f(\vec{x}_k) \| \leq \sqrt{\frac{f(\vec{x}_0) - f^*}{M(n+1)}}
+\end{cases}
+\end{equation*}
+\noindent\underline{Descent Direction "Method"}\\
+Inputs: \(\vec{x}_0 \in \mathds{R}^n\), tolerance \(\varepsilon >0\)\\
+While \(\|\nabla f(\vec{x})\| > \varepsilon\)
+\begin{enumerate}
+    \item Choose \(\vec{d}_k\)
+    \begin{equation*}
+    \hspace{-10pt} \vec{d}_k =\begin{cases}
+        & - \nabla f(\vec{x}) \hspace{42.5pt} \text{// gradient/steepest descent}\\
+        & -[\nabla^2 f(\vec{x})]^{-1} \nabla f(\vec{x}) \,\text{// Newton (only if }H\succ 0)
+    \end{cases}
+    \end{equation*}
+
+    \item Choose step size \(t_k\) via line search
+    \begin{equation*}
+        t_k = \begin{cases}
+            &\tilde{t} \hspace{102.5pt} \text{// constant}\\
+            &\arg\, \min_{t\geq0} f(\vec{x}_k + t_k\vec{d}_k) 
+            \hspace{20pt} \text{// exact}\\
+            & \hspace{87.5pt}\text{// see backtrack}
+        \end{cases}
+    \end{equation*}
+
+    \item Set \(\vec{x}_{k+1} = \vec{x}_k + t_k \vec{d}_k\), \(k=k+1\)
+\end{enumerate}
+\noindent \underline{Backtracking Line Search}\\
+Inputs: \(s>0,\, \alpha \in (0,\,1),\, \beta\in (0,\,1)\)
+\begin{enumerate}
+    \item Set \(t_k =s\)
+    \item While \(f(\vec{x}_k +t_k\vec{d}_k) > f(\vec{x}_k) + \alpha t_k \nabla f(\vec{x}_k)^T \vec{d}_k\)\\
+    \hspace{80pt} \(t_k = \beta t_k\)
+\end{enumerate}
+    
+\noindent\underline{Lipschitz Continuity}\\
+"If the next derivative is bounded by some L for all x, then the function is Lipschitz at the current derivative with L being the boundary".
+\begin{equation*}
+    \textbf{def. } f \in C_L^{1,1} (\mathds{R}^n)\, \Longleftrightarrow \,\|\nabla f(\vec{x}) - \nabla f(\vec{y}) \| \leq L\|\vec{x} -\vec{y}\| \hspace{20pt} 
+\end{equation*}
+\begin{equation*}
+    \text{thm }4.20 \hspace{10pt} f \in C_L^{1,1} (\mathds{R}^n)\, \Longleftrightarrow\, \|\nabla^2 f(\vec{x})\| \leq L, \, \forall \vec{x} \in \mathds{R}^n
+\end{equation*}
+\begin{equation*}
+    C^n < C^{a,b}_L < C^{n+1} \hspace{30pt} \text{// Lipschitz is  "in between"}
+\end{equation*}
+\begin{equation*}
+    f \in C_L^{1,1} (\mathds{R}^n) \implies f(\vec{y}) \leq f(\vec{x}) + \nabla f(\vec{x})^T (\vec{y} -\vec{x}) + \frac{L}{2} \|\vec{y} - \vec{x}\|^2
+\end{equation*}
+\begin{equation*}
+    f \in C_L^{1,1} (\mathds{R}^n) \implies f(\vec{x}) - f(\vec{x} -t\nabla f(\vec{x})) \geq t(1-Lt/2)\|\nabla f(\vec{x})\|^2
+\end{equation*}
+\noindent \underline{(Pure) Newton's Method} \hspace{40pt} Converges quadratically\\
+Inputs: \(\vec{x}_0\in \mathds{R}^n,\) tolerance \(\varepsilon >0\)\\
+While \(\|\nabla f(\vec{x})\| > \varepsilon\)
+\begin{enumerate}
+    \item Set \(\vec{d}_k= - [\nabla^2 f(\vec{x}_k)]^{-1} \nabla f (\vec{x}_k)\)
+    \item Set \(\vec{x}_{k+1} = \vec{x}_k + \vec{d}_k\) \hspace{30pt} // \(t_k =1\)
+    \item Set \(k = k+1\)
+\end{enumerate}
+"Newton's method approximates a function as quadratic and solves it directly. If the function is quadratic already, it solves it in one step".\\
+"Only descends if \(A\succ0\), and still can fail. Expensive, solves linear system (\(\nabla^2\)) at every \(k\)".
+\begin{equation*}
+    \text{Assume } \nabla^2 f(\vec{x}) \succ mI,\, \forall\vec{x} \in \mathds{R}^n,\,\text{ then:} 
+\end{equation*}
+\begin{equation*}
+    \begin{cases}
+        &\|\nabla^2 f(\vec{x}) - \nabla^2 f(\vec{y})\| \leq L \| \vec{x} - \vec{y}\| \hspace{45pt} \text{// Lipschitz}\\
+        & \|\vec{x}_{k+1} - \vec{x}^* \| \leq \frac{L}{2m} \|\vec{x}_k -\vec{x}^* \|^2 \hspace{30pt} \text{// Converge quad.}
+    \end{cases}
+\end{equation*}
+\noindent\underline{Damped Newton's Method}\\
+Newton's Method but Backtracking for step size.\\
+\begin{equation*}
+    \Def \text{Weierstrass Thm} : \text{if} \hfive f\in C^1(C\subseteq \rn),\, C \hfive \text{non-empty,}
+\end{equation*}
+\begin{equation*}
+    \text{compact}: \exists \hfive \text{global (min, max) of }f \text{ over } C
+\end{equation*}
+
+
+%%%%%%
+\subsection*{2nd Half}
+\begin{equation*}
+    \min \text{concave f}(\text{over convex set}) \implies \exists \min \text{ at ext pt}
+\end{equation*}
+In strictly convex opt prob, local min are global min \\
+The set of opt pts to convex opt prob is also convex
+\begin{equation*}
+    \text{\textbf{Def.}} \hspace{10pt} C \text{  convex} \hspace{5pt} \iff \hspace{5pt} \vec{x},\, \vec{y},\, [\lambda \vec{x} + (1-\lambda)\vec{y}] \in C,\, \lambda \in [0,\,1]
+\end{equation*}
+\begin{equation*}
+        \underbrace{\text{if } S \subseteq \mathds{R}^n, \, \vec{x} \in \text{conv}(S)}_{\text{Caratheodry thm}}; \hspace{10pt} \begin{matrix}
+        \exists \, \vec{x}_1,\, \dots\, \vec{x}_{n+1} \in S \\
+        \text{s.t.} \vec{x} \in \text{conv}(\{\vec{x}_1,\, \dots\, \vec{x}_{\textbf{n+1}}\})
+    \end{matrix}
+\end{equation*}
+\begin{equation*}
+    \text{\textbf{Def.}} \hspace{5pt} S\hspace{5pt}\text{is convex cone} \hspace{5pt} \iff \begin{cases}
+        \vec{x},\, \vec{y} \in S \implies \vec{x} + \vec{y} \in S\\
+        \vec{x} \in S,\, \lambda \geq 0 \implies \lambda\vec{x} \in S
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    \text{\textbf{Def.} conic comb.}\hspace{5pt} \lambda_1\vec{x}_1  + \dots + \lambda_k\vec{x}_k \hspace{5pt} \text{w/} \hspace{5pt} \begin{matrix}  \vec{x}_1,\, \dots \, \vec{x}_n \in \mathds{R}^n,\\ \vec{\lambda} \in \mathds{R}_+^k \end{matrix}
+\end{equation*}
+\begin{equation*}
+    \Def \begin{matrix} \vec{x}\in S \hspace{5pt} \text{is \textbf{ext pt} of } \\  S \subseteq \mathds{R}^n, \text{convex}\end{matrix}\hspace{5pt} \text{if}: \hspace{5pt} \begin{matrix} \nexists \vec{x}_1 \neq \vec{x}_2 \in S,\\ \text{s.t. }  \vec{x} = \lambda\vec{x}_1 + (1-\lambda)\vec{x}_2\end{matrix}
+\end{equation*}
+\begin{equation*}
+    \text{if} \hspace{5pt} S \subseteq \rn \hspace{5pt} \text{is compact, convex}: \hspace{5pt} S = \text{conv(ext(}S))
+\end{equation*}
+\begin{equation*}
+    \hspace{-10pt} \Def f:C\rightarrow\rn \text{convex if}:
+\end{equation*}
+\begin{equation*}
+    f(\lambda \vec{x} +(1-\lambda)\vec{y}) \leq \lambda f(\vec{x}) + (1-\lambda)f(\vec{y}) \hspace{20pt} \forall \vec{x},\, \vec{y} \in C,\, \lambda \in [0,\,1] 
+\end{equation*}
+\begin{equation*}
+    \Def \text{Jenson's ineq}: \hfive f\left(\Sigma_i \lambda_i \vec{x}_i\right) \leq \Sigma_i\lambda_if(\vec{x}_i)
+\end{equation*}
+\begin{equation*}
+    \hspace{-10pt}\begin{cases}
+        f \hfive \text{convex} \iff f(\vec{x}) + \nabla f(\vec{x})^T (\vec{y}-\vec{x}) \leq f(\vec{y}) \hfive \forall \vec{x},\, \vec{y} \in C  & 1^{\text{st}}\\
+        f \hfive \text{convex} \iff \nabla^2f(\vec{x}) \succeq 0 \forall \vec{x} \in C \hspace{20pt} (\text{strictly if} \succ) & 2^{\text{nd}}
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    \Def \text{Orthog. Proj:} \hfive P_c (\vec{x})  = \arg \min_{\vec{y}\in C} ||\vec{x} - \vec{y}||^2 \hspace{20pt} // \text{unique}
+\end{equation*}
+\begin{equation*}
+    \Def \hfive \vec{x}^* \in C \hfive \text{is \textbf{stat pt} if}: \hfive \nabla f(\vec{x}^*)^T(\vec{x}-\vec{x}^*) \geq 0 \hfive \forall \vec{x}\in C 
+\end{equation*}
+\begin{equation*}
+    \begin{cases}
+        f\in C^1 \implies \hfive \text{local min are stat pts}  & \text{nec for opt}\\
+        f \hfive \text{also convex}  & \text{suff for opt}
+    \end{cases}
+\end{equation*}
+\noindent\underline{Gradient Projection Method} \hspace{30pt} Converges sublinearly\\
+Set \(\vec{x}_0 \in C \), \(\varepsilon>0\), and repeat for \(k= 0,\,1,\, \dots\)
+\begin{enumerate}
+    \item Pick step size \(t_k\) (small, or line search)
+    \item \(\vec{x}_{k+1} = P_c(\vec{x}_k - t_k\nabla f(\vec{x}_k) )\)
+    \item If \(||\vec{x}_{k+1} -\vec{x}_k || \leq \varepsilon\), STOP
+\end{enumerate}
+Unlikely for \(\nabla f(\vec{x}^*) \approx 0\). Different from other methods. Sub-linear converge if Lipschitz \(\tilde{t}\) chosen well. (With \(n\) = \# iters)
+
+\noindent\underline{KKT}
+\begin{equation*}
+    f(\vec{x}_k) - f^* \leq ||\vec{x}_0 -\vec{x}^*||^2 /(2\tilde{t} n)
+\end{equation*}
+\begin{align*}
+    (P)\hspace{20pt} &\min_{\vec{x} \in \rn} &\,f(\vec{x}) \hspace{30pt} & \, f,\, g_i,\, h_j  \in C^1(\rn)\\
+    & \hspace{10pt} \text{s.t.} &\, g_i(\vec{x}) \leq 0 \hspace{10pt} &  i = 1,\, \dots\, m\\
+    & &\, h_j(\vec{x}) = 0 \hspace{10pt} & j = 1,\, \dots \, p
+\end{align*}
+\begin{equation*}
+    \Def I(\vec{x}^*) = \{i\in [m] : g_i(\vec{x}^*) =0  \} = \hfive \text{set of active constr.}
+\end{equation*}
+\begin{equation*}
+    \Def \text{feasible pt } \vec{x}^* \text{ is \textbf{regular} if}: 
+\end{equation*}
+\begin{equation*}
+    \{\nabla g_i(\vec{x}^*): i \in I(\vec{x}^*)\} \bigcup \{\nabla h_j(\vec{x}) : j = 1,\, \dots\, p \} \hspace{2.5pt} \text{are lin. indep}
+\end{equation*}
+\begin{equation*}
+    \Def \text{Slater's Condition holds if}: \hfive \exists \hat{\vec{x}} \in \rn \hfive \text{s.t.} \hfive g_i(\vec{x}) < 0 \, \forall i
+\end{equation*}
+\begin{equation*}
+    \begin{cases}
+        \text{if} \hfive \begin{matrix}
+            \vec{x}^* \hfive \text{is local min of } (P)\text{, regular} \\
+            \text{(Slater's cond holds)}
+        \end{matrix}\implies \text{KKT pt} & \text{nec}\\
+        \text{and if} \hfive (P) \hfive \text{convex} \implies \hfive \text{KKT pt IS opt pt} & \text{suf}
+    \end{cases}
+\end{equation*}
+\noindent \underline{KKT Conditions}
+\begin{equation*}
+    L(\vec{x},\, \vec{\lambda},\, \vec{\mu}) = f(\vec{x})  + \Sigma \lambda_i g_i(\vec{x}) + \Sigma \mu_j h_j(\vec{x})
+\end{equation*}
+\begin{equation*}
+    \nabla_{\vec{x}}L = \vec{0} \hspace{30pt} \lambda_ig_i(\vec{x}) = 0 \hspace{30pt} \mu_j h_j(\vec{x}) = 0
+\end{equation*}
+\begin{equation*}
+    g_i(\vec{x}) \leq 0 \hspace{30pt} h_j(\vec{x}) = 0 \hspace{30pt}
+    \vec{\lambda} \geq 0
+\end{equation*}
+
+\noindent \underline{Duality}
+\begin{equation*}
+    q(\vec{\lambda},\, \vec{\mu}) = \min_{\vec{x}} L(\vec{x},\, \vec{\lambda},\, \vec{\mu}) \hspace{20pt} //\text{always concave, sol is ext pt}
+\end{equation*}
+\begin{equation*}
+    (D) \hfive q^* = \max_{\vec{\lambda},\, \vec{\mu}} q(\vec{\lambda},\, \vec{\mu}) \hspace{20pt} // \text{always convex, even if } (P) \text{ isn't}
+\end{equation*}
+\begin{equation*}
+    \text{dom} (q) = \{ (\vec{\lambda},\, \vec{\mu}) \in \mathds{R}_+^m \times \mathds{R}^p : q(\vec{\lambda},\, \vec{\mu}) > -\infty \}
+\end{equation*}
+\textbf{Weak Duality}: \(q^* \leq f^*\) always holds\\
+\textbf{Strong Duality}: \(q^* =f^*\) when \((P)\) convex, w/ \(\min > - \infty\)
+
+
+\noindent\underline{Advanced Variants}\\
+"Dream: by approximating the Hessian instead of computing, the number of iterations can be reduced w/o incurring the cost of computing the Hessian".
+\begin{itemize}
+    \item Diagonal scaling: Set \(\vec{d}_k = D_k \nabla f(\vec{x}_k) = SS^T\nabla f(\vec{x}_k) \) where \(\vec{x} = S\vec{y}\) is a change in variables to  alter \(x_i\)'s, or non-dimensionalize to have similar sensitivity to changes across all \(x_i\)'s.
+    \item  BFGS Quasi-Newton: Alters the problem to utilize the inverse-Hessian while avoiding the issue of ever inverting. Can converge super-linearly (faster than grad. desc, slower than Newton's). Limited memory variant exist. Most opt solvers use this method.
+    \item Gauss-Newton Method: Solves the non-linear least squares problem when \(f: \mathds{R}^n \to \mathds{R}^m\) via Jacobian.
+\end{itemize}
+
+
+
+
+
+
+
+
+%%%%
+\newpage
+\section*{Content that didn't fit}
+\begin{equation*}
+    \frac{(\vec{x}^T \vec{x})^2}{(\vec{x}^T A^{-1} \vec{x})} \geq \frac{4\kappa}{(\kappa+1)^2} \hspace{10pt}
+    \kappa = \frac{\lambda_{\max}(A)}{\lambda_{\min}(A)} \hspace{10pt} \text{// Kantrovic ineq.}  
+\end{equation*}
+\noindent \underline{Symmetric, Square \(A\) Properties}
+\begin{equation*}
+     \text{Tr}(A) = \sum_{i=1}^n A_{ii} = \sum_{i=1}^n \lambda_i(A) \hspace{30pt} \text{det}(A) = \prod_{i=1}^n \lambda_i(A) 
+\end{equation*}
+\begin{equation*}
+      R_{A}(\vec{x}\neq 0 ) =\frac{\vec{x}^TA\vec{x}}{\vec{x}^T\vec{x}}\hspace{30pt} \lambda_{\min}(A) \leq R_{A}(\vec{x}\neq0)\leq \lambda_{\max}(A) 
+\end{equation*}
+\begin{equation*}
+    f\in C^2(\mathds{R}^n) \hspace{30pt} \left(\nabla^2 f(\vec{x}) \right)_{ij} =  \frac{\partial^2f}{\partial x_i \partial x_j} \in \mathds{R}^{n \times n}
+\end{equation*}
+\begin{equation*}
+    h(\vec{x}) = f(g(\vec{x})) \hspace{18pt} \nabla h(\vec{x}) = \nabla g(\vec{x}) \nabla f(g(\vec{x})) \hspace{18pt} \text{// chain rule}
+\end{equation*}
+\noindent \underline{Sets} 
+\begin{equation*}
+    \text{int}(U) = \{\vec{x} \in U : B(\vec{x},\,r) \subseteq U : \text{ for some } r >0 \}
+\end{equation*} 
+\begin{equation*}
+    \text{Cl}(U) = \bigcap \{T: T \supseteq U,\, T \text{ closed}\}
+\end{equation*}
+\begin{equation*}
+    U\subseteq\mathds{R}^n \text{ bounded if } \exists M>0 \text{  s.t.  } U \subset B(\vec{0},\, M)
+\end{equation*}
+\begin{equation*}
+    \text{compact} = \text{closed} + \text{bounded}
+\end{equation*}
+\begin{equation*}
+    S \subseteq \mathds{R}^n \hspace{20pt} f^* =  \inf \{ f(\vec{x}) : \vec{x} \in S\} = \underbrace{\min \{ f(\vec{x}) : \vec{x} \in S\}}_{\text{if proper min. in set}}
+\end{equation*}
+\noindent \underline{Definiteness of \textbf{Symmetric} Matrices}
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \begin{tabular}{ccc}
+        Name & Symbolic & Eigenvalues \(\forall i\)\\
+        \hline
+        PSD & \(A\succeq 0\) & \(\lambda_i(A)\geq0\) \\
+        PD &  \(A\succ 0\) & \(\lambda_i(A)>0\) \\
+        NSD &  \(A\preceq 0\) & \(\lambda_i(A)\leq0\) \\
+        ND &  \(A\prec 0\) & \(\lambda_i(A)<0\) \\
+        Ind. & \(A \npreceq 0,\, A \nsucceq 0\) & \(\lambda_{\max}(A) > 0, \, \lambda_{\min}(A)<0\)\\
+    \end{tabular}
+\end{table}
+\vspace{-30pt}%%%%%%% 
+\begin{equation*}
+    \textbf{Def. }A\in \mathds{R}^{n\times n} \succeq 0 \hspace{10pt} \text{if} \hspace{10pt} \vec{x}^TA\vec{x} \geq 0 \hspace{10pt} \forall \vec{x} \in \mathds{R}^n \hspace{45pt} 
+\end{equation*}
+\begin{equation*}
+    \textbf{Def. }A\in \mathds{R}^{n\times n} \succ 0 \hspace{10pt} \text{if} \hspace{10pt} \vec{x}^TA\vec{x} \geq 0 \hspace{10pt} \forall \vec{x} \in \mathds{R}^n \setminus \{0\} \hspace{20pt}
+\end{equation*}
+\begin{equation*}
+    A \succ 0 \rightarrow A_{ii} > 0 \hspace{30pt}  A \succeq 0 \rightarrow A_{ii} \geq 0
+\end{equation*}
+\begin{equation*}
+    \text{if signs on diagonal differ, }A \text{ is Indef.}
+\end{equation*}
+
+
+
+\noindent\underline{Hybrid Gradient Newton Method}
+\begin{equation*}
+    \text{if } \nabla^2 f(\vec{x_k}) \succ 0\implies \vec{d}_k = - [\nabla^2 f(\vec{x}_k)]^{-1} \nabla f( \vec{x}_k)
+\end{equation*}
+\begin{equation*}
+    \text{otherwise: } \vec{d}_k = -\nabla f(\vec{x}_k)
+\end{equation*}
+\noindent \underline{Circle Fitting}\\
+"Non-linear least squares problem that can be reformulated as a linear least squares problem".
+\begin{equation*}
+    \text{fit most pts. } \vec{a}_i \text{ with } C(\vec{x},\, r) = \{\vec{a} \in\mathds{R}^n:\, \|\vec{a} - \vec{x}\| = r\}
+\end{equation*}
+\begin{equation*}
+    \text{Orig prob:     } \min_{\vec{x},\, R}  \sum_{i=1}^m\left(-2\vec{a}_i^T\vec{x} + R + \|\vec{a}_i\|^2 \right)^2
+\end{equation*}
+\begin{equation*}
+    \text{Equivalent to:    }\min_{\vec{y} \in\mathds{R}^{n+1}} \left\|\tilde{A} \vec{y} - \vec{b} \right\|^2 \hspace{5pt} \text{where:} \hspace{5pt} \vec{y} = \begin{bmatrix}
+        \vec{x} \\R 
+    \end{bmatrix} \in \mathds{R}^{n+1}
+\end{equation*}
+\begin{equation*}
+    \tilde{A} = \begin{bmatrix}
+        \--  2\vec{a}_1^T  \-- & -1 \\
+          \vdots  &\\
+         \--  2\vec{a}_m^T  \-- & -1 \\
+    \end{bmatrix} \in \mathds{R}^{m\times n+1} \hspace{10pt} \Vec{b} = \begin{bmatrix}
+        \|\vec{a}_1\|^2 \\ \vdots \\\|\vec{a}_m\|^2
+    \end{bmatrix} \in \mathds{R}^m
+\end{equation*}
+\begin{equation*}
+    \text{gives:} \hspace{20pt} \vec{x}^* = y^*[1:n], \hspace{5pt} r^* = \sqrt{\|\vec{x}^*\|^2 - y^*[n+1]}
+\end{equation*}
+\end{document}

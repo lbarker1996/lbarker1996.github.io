@@ -1,0 +1,44 @@
+% These  all go in main tex, but display here!
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}    % allows math to happen
+\usepackage{marvosym}
+\usepackage{textcomp}
+\usepackage{geometry}   % allows you to change the margins and headers/footers, and more
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{multirow} 
+\usepackage{graphicx}   % allows for inclusion of graphics or several types, i think
+\usepackage{float}      % SUPER  IMPORTANT. lets you tell LaTeX where to put your graphics, as opposed to where it feels
+\usepackage{wrapfig}    % Lets text wrap around figures, more relevant for reports really
+\usepackage[table]{xcolor}  % enhances tables by allowing colors to happen. notably, as background/fill colors
+\usepackage{caption}    % lots of control of captions and caption geometries
+\usepackage{comment} % allows block comments to occur
+\usepackage{dsfont} % script set notation letters
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{ragged2e} % ragged right
+\usepackage{booktabs}
+
+% \usepackage{bondgraph}  % allows bond graphs
+
+  
+
+\geometry{margin=.5in, bottom=0.5in, top =0.75in}      % this allows for a lot to fit on the page
+
+\newcommand{\hspacearrow}[1]{\hspace{#1 pt} \longrightarrow \hspace{#1 pt}}
+\newcommand{\intof}{\int_{t_0}^{t_f}}
+
+
+%% header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+%\headheight 30pt
+\lhead{\small Levi Barker}
+\chead{\textbf{\coursename}}
+\rhead{\small U0959362}
+\lfoot{}
+\cfoot{\small\thepage}
+\rfoot{}
+\headsep 10pt

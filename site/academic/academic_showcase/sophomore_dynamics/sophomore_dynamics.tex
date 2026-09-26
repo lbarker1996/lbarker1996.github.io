@@ -1,0 +1,236 @@
+\documentclass[twocolumn, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{marvosym}
+\usepackage{textcomp}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{amssymb}
+
+
+\geometry{a4paper, margin=.75in}
+
+\begin{document}
+
+
+\section*{Dynamics}
+\subsection*{Equations}
+
+
+\begin{equation*}
+   \textbf{s}_f= \textbf{s}_i + \textbf{v}_it+ \frac{1}{2} \textbf{a}_ct^2   \hspace{15pt} \textbf{v}_f = \textbf{v}_i + \textbf{a}_ct 
+\end{equation*}
+
+\begin{equation*}
+    \textbf{v}_f^2 = \textbf{v}_i^2+2 \textbf{a}_c (\textbf{s}_f-\textbf{s}_i) \hspace{15pt}      \int_{\textbf{s}_i}^{\textbf{s}_f} \textbf{a}ds=\int_{\textbf{v}_i}^{\textbf{v}_f}  \textbf{v}dv
+\end{equation*}
+
+\begin{equation*}
+    \int_{\textbf{s}_i}^{\textbf{s}_f}ds =  \int_{t_i}^{t_f} \textbf{v}dt  \hspace{15pt}  \int_{\textbf{v}_i}^{\textbf{v}_f}dv =  \int_{t_i}^{t_f} \textbf{a}dt
+\end{equation*}
+
+\begin{equation*}
+    \textbf{v}_r = \Dot{r}  \hspace{15pt} \textbf{v}_\theta = r\dot{\theta} \hspace{15pt}\textbf{v}_z = \dot{z}
+\end{equation*}
+
+\begin{equation*}
+      |\textbf{v}| = \sqrt{\textbf{v}_r^2 + \textbf{v}_\theta^2 +\textbf{v}_z^2} \hspace{15pt} \textbf{a}_z=\Ddot{z}
+\end{equation*}
+
+\begin{equation*}
+    \textbf{a}_r=\Ddot{r}-r\dot{\theta}^2 \hspace{15pt} \textbf{a}_\theta=r\Ddot{\theta}+2\dot{r}\dot{\theta}
+\end{equation*}
+
+\begin{equation*}
+    |\textbf{a}|=\sqrt{\textbf{a}_r^2 + \textbf{a}_\theta^2 +\textbf{a}_z^2}
+\end{equation*}
+
+\begin{equation*}
+    \textbf{a}_n = \frac{\textbf{v}_t^2}{\rho} \hspace{15pt} \textbf{a}_t = \dot{\textbf{v}_t} \hspace{15pt}              \textbf{v}_B = \textbf{v}_A + \textbf{v}_{B/A}
+\end{equation*}
+
+\begin{equation*}
+    \rho= \frac{(1+(\frac{dy}{dx})^2)^\frac{3}{2}}   {\frac{d^2y}{dx^2}} \hspace{15pt} \Sigma\textbf{F} = m\textbf{a}
+\end{equation*}
+
+
+\begin{equation*}
+     U=\textbf{F}s \hspace{15pt} \textbf{F}_s=-k\textbf{s} \hspace{15pt} V_s,U_s = \int_{s_1}^{s_2} \textbf{F}ds
+\end{equation*}
+
+\begin{equation*}
+    T=\frac{1}{2}m\textbf{v}^2+\frac{1}{2}I_G\omega^2   \hspace{15pt}  T_1+\Sigma U_{2-1}= T_2
+\end{equation*}
+
+\begin{equation*}
+    T_1+V_1=T_2+V_2 \hspace{15pt} V= mgh + \frac{1}{2}ks^2
+\end{equation*}
+
+\begin{equation*}
+      V_g=mgh  \hspace{15pt}   1\hspace{3pt} \text{hp} \equiv 550\frac{\text{ft}\cdot \text{lb} }{\text{s}}
+\end{equation*}
+
+\begin{equation*}
+    P=\frac{dU}{dt}=\textbf{Fv}   \hspace{15pt}  \varepsilon =\frac{\text{power output}}{\text{power input}}
+\end{equation*}
+
+\begin{equation*}
+    m\textbf{v}_i +\int_{t_1}^{t_2} \Sigma \textbf{F}dt = m\textbf{v}_f
+\end{equation*}
+
+\begin{equation*}
+    m_a\textbf{v}_{a,i}+m_b\textbf{v}_{b,i}=m_a\textbf{v}_{a,f}+m_b\textbf{v}_{b,f}
+\end{equation*}
+
+
+\begin{equation*}
+    e=\frac{\textbf{v}_{b,f}-\textbf{v}_{a,f}}{\textbf{v}_{a,i}-\textbf{v}_{b,i}}  \hspace{15pt}  0 \leq e\leq 1
+\end{equation*}
+
+\begin{equation*}
+    \textbf{H}=\textbf{r} \times \textbf{p} = I\omega \hspace{15pt} \textbf{r}_i \times \textbf{p}_i = \textbf{r}_f \times \textbf{p}_f
+\end{equation*}
+
+\begin{equation*}
+    \textbf{r}_i \times \textbf{p}_i + \int \textbf{r}(t) \times \Sigma \textbf{F}(t)dt = \textbf{r}_f \times \textbf{p}_f
+\end{equation*}
+
+\begin{equation*}
+    \textbf{s}=\theta \textbf{r} \hspace{15pt} \textbf{v}= \Vec{\omega} \times \textbf{r} \hspace{15pt} \textbf{a}_t = \Vec{\alpha} \times \textbf{r}
+\end{equation*}
+
+\begin{equation*}
+    \int_{\theta_i}^{\theta_f}   \Vec{\alpha}d\theta =\int_{\omega_i}^{\omega_f} \Vec{\omega}d\omega \hspace{15pt} \int_{\theta_i}^{\theta_f} d\theta = \int_{t_i}^{t_f}\vec{\omega} dt
+\end{equation*}
+
+\begin{equation*}
+    \int_{\omega_i}^{\omega_f}d\omega = \int_{t_i}^{t_f}\Vec{\alpha}dt \hspace{15pt} I=I_G+md^2
+\end{equation*}
+
+\begin{equation*}
+    \textbf{v}_b = \textbf{v}_a + \Vec{\omega} \times \textbf{r}_{b/a} \hspace{15pt} \textbf{v}_a = \textbf{v}_b +\Vec{\omega} \times \textbf{r}_{a/b} 
+\end{equation*}
+
+\begin{equation*}
+    \textbf{a}_b = \textbf{a}_a + \Vec{\alpha}\times\textbf{r}_{b/a} -\omega^2\textbf{r}_{b/a} \hspace{15pt}  I_G = mk^2
+\end{equation*}
+
+\section*{Undamped Free Vibration}
+Standard equation form:
+\begin{equation*}
+    m \Ddot{x}+kx=0 
+\end{equation*}
+\noindent
+if,
+\begin{equation*}
+    \omega_n \triangleq \sqrt{\frac{k}{m}}
+\end{equation*}
+
+\noindent
+then:
+\begin{equation*}
+    \Ddot{x}+\omega_nx=0
+\end{equation*}
+
+\begin{equation*}
+    \omega_n=2\pi f \hspace{15pt} f\tau=1
+\end{equation*}
+
+\noindent
+Simple pendulum period:
+\begin{equation*}
+    \tau=\frac{2\pi}{\omega_n}=2\pi \sqrt{\frac{l}{g}} 
+\end{equation*}
+
+\section*{Confusers}
+\begin{center}
+\begin{align*}
+    H &\equiv \text{angular momentum}\\
+    T &\equiv \text{kinetic energy}\\
+    U &\equiv \text{work}\\
+    V &\equiv  \text{potential energy}\\
+    \textbf{v}_{b/a}&\equiv \text{velocity of b, relative to a}\\
+    \textbf{r}_{b/a} &\equiv \text{position of b, from a} \\
+\end{align*}
+\end{center}
+\subsection*{Coefficient of Restitution Values}
+
+\noindent
+if:
+\[
+e=
+\begin{cases}
+1  &\text{the collision is entirely plastic}\\
+0 &\text{the collision is entirely elastic}\\
+\end{cases}
+\]
+\begin{center}
+    otherwise, the collision is partially elastic
+\end{center}
+
+
+
+
+\subsection*{Unit Vectors}
+
+
+\(\hat{u}_n \equiv \) normal to curvature direction \\
+\(\hat{u}_t \equiv\) tangential to motion direction\\ 
+\vspace{5pt}\\
+\(\hat{u}_\theta \equiv \) transverse direction\\
+\(\hat{u}_r \equiv \) radial direction (towards the origin)\\
+
+\subsection*{Diagram Tips}
+\underline{Free Body Diagram}
+\begin{enumerate}
+    \item Apply weight forces
+    \item Determine contact points/surfaces
+    \item Apply all forces at contact points/surfaces
+\end{enumerate}
+\underline{Kinetic Diagram}
+\begin{enumerate}
+    \item Assume motion is in the positive directions
+    \item Apply resistance to motion moment(s)
+\end{enumerate}
+
+\noindent
+\underline{Equations}\\
+
+\noindent
+Equate the forces/moments present on the Free Body Diagram to those on the Kinetic diagram, as such:
+\begin{equation*}
+    \underbrace{\sum\textbf{F}_x}_{\text{Free Body Diagram}} = \underbrace{ \sum \textbf{F}_x}_{\text{Kinetic Diagram}}
+\end{equation*}
+\begin{equation*}
+    \underbrace{\sum\textbf{F}_y}_{\text{Free Body Diagram}} = \underbrace{ \sum \textbf{F}_y}_{\text{Kinetic Diagram}}
+\end{equation*}
+
+\begin{equation*}
+    \underbrace{\sum\textbf{M}_G}_{\text{Free Body Diagram}} = \underbrace{ \sum \textbf{M}_G}_{\text{Kinetic Diagram}}
+\end{equation*}
+
+\vspace{10pt}
+\noindent
+\underline{Impulse Diagram}
+\begin{enumerate}
+    \item Draw the initial conditions momentum diagram
+    \item Draw the impulse diagram (FBD \(\cdot\) t)
+    \item Draw the final conditions momentum diagram
+\end{enumerate}
+\noindent
+Equate the three drawn diagrams according to the following equation:
+
+\begin{equation*}
+     \text{Initial Momenta} + \text{Impulse}=\text{Final Momenta}
+\end{equation*}
+
+
+
+
+\end{document}

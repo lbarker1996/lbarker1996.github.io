@@ -16,6 +16,9 @@
         <loc>https://www.example.com/academic/senior_design/</loc>
       </url>
       <url>
+        <loc>https://www.example.com/academic/rotation_visualizer/</loc>
+      </url>
+      <url>
         <loc>https://www.example.com/personal/sudoku/</loc>
       </url>
 </urlset>

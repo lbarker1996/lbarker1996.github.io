@@ -1,7 +1,7 @@
 # Formula Sheets
 
 In studying for exams, I have always known I was prepared once I was happy with my formula sheet.
-Fortunately, I leared about \(\LaTeX\) early on (*i.e.*, Sophmore Dynamics), and preppaing a formula sheet felt the perfect time to learn.
+Fortunately, I leared about \(\LaTeX\) early on (*i.e.*, Sophomore Dynamics), and prepping a formula sheet felt the perfect time to learn.
 Since then, my typesetting abilities have grown with every formula sheet I made; a skill that I deeply value.
 
 

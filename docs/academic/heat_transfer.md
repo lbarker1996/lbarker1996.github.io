@@ -2,7 +2,7 @@
 
 For this course, we were allowed a full sheet of formulae for each exam. 
 So I created three sequential documents over the duration of the course. 
-They are presented here as seperate documents, because that was how I created them at the time,
+They are presented here as seperate documents, because that was how I created them at the time.
 
 ### Midterm Exam I
 <iframe

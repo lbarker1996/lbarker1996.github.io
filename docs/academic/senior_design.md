@@ -25,7 +25,7 @@ Within this project, I championed the electrical design and created the initial 
 software used to tun the device (it was later ported over to LabView to achieve the graphical
 user interface).
 
-Control of the vibrational mototr-LED pairs ocurrs via multiplexing; that is, any individual
+Control of the vibrational motor-LED pairs ocurrs via multiplexing; that is, any individual
 motor-LED pair can be individually activated by energizing the corresponding voltage and ground
 connections. The graphic below gives an abstracted explanation.
 

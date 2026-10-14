@@ -18,7 +18,8 @@ see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tre
 
 ### Robotics with a Twist
 
-In this course, we were allowed a 3 by 5 notecard for each exam, so I changed the page margins to accomodate this.
+In this course, we were allowed a 3 by 5 notecard for each exam,
+so I changed the page margins, and cut out the printed copies to accomodate this.
 <iframe
     src="./academic_showcase/robotics_with_a_twist/robotic_with_a_twist.pdf"
     width="100%"

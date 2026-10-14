@@ -9,23 +9,23 @@ Click here for a [printer-friendly version](embedded_cv.md), otherwise, see belo
 ##### Ph.D. in Mechanical Engineering
 Spring 2027 | *Univeristy of Utah* | Salt Lake City, Utah
 
-- Magnetics & Medical Robotics under Dr. Jake J. Abbott
+- [Magnetic & Medical Robotics Lab](https://mmrobotics.mech.utah.edu/) under Dr. Jake J. Abbott
 - Dissertation Title: "*Linear Modeling and Model-based Manipulation of Conductive Nonmagnetic Objects Using Magnetic Induction*"
 
 
 ##### B.S./M.S in Mechanical Engineering
 Spring 2025 | *Univeristy of Utah* | Salt Lake City, Utah
 
-- Realized a novel stroke rehabilitation prototype for remapping neural pathways (Pat. Pend.)
+- Realized a novel [stroke rehabilitation prototype](../academic/senior_design.md) for remapping neural pathways (Pat. Pend.)
 - Lead a mechatronics team in design and creation of a confection sorting robot
 
 ---
 
 ### Publications
 ##### Peer-Reviewed Journal Articles:
-- **L.M. Barker**, T.J. Allen, J.J., "Abbott Force and Torque Induced on a Conductive Nonmagnetic Cylinder by a Rotating Magnetic Dipole." *IEEE Transactions on Magnetics*, (under review)
-- T.J. Allen, **L.M. Barker**, J.J. Abbott, "Assume a Spherical Cube: Bounding the Force and Torque Induced on a Conductive Nonmagnetic Cube by a Rotating Magnetic Dipole." *IEEE Magnetics Letters*, 2026
-- **L.M. Barker**, T.J. Allen, A.J. Sperry, J.J. Abbott, "Revisiting the far-field model of the force and torque induced on a conductive nonmagnetic sphere by a rotating magnetic dipole." *Scientific Reports*, 2025
+1. **L.M. Barker**, T.J. Allen, J.J., "Abbott Force and Torque Induced on a Conductive Nonmagnetic Cylinder by a Rotating Magnetic Dipole." *IEEE Transactions on Magnetics*, (under review)
+2. T.J. Allen, **L.M. Barker**, J.J. Abbott, "[Assume a Spherical Cube: Bounding the Force and Torque Induced on a Conductive Nonmagnetic Cube by a Rotating Magnetic Dipole.](allen_magn_let_2026.md)" *IEEE Magnetics Letters*, 2026
+3. **L.M. Barker**, T.J. Allen, A.J. Sperry, J.J. Abbott, "[Revisiting the far-field model of the force and torque induced on a conductive nonmagnetic sphere by a rotating magnetic dipole.](barker_sci_rep_2025.md)" *Scientific Reports*, 2025
 
 ---
 

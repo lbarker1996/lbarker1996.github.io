@@ -11,7 +11,8 @@ site_author = "Levi M. Barker"
 # edit_uri = "edit/main/docs/"
 
 nav = [
-  { "Introduction" = "index.md"},
+  { "About me" = "index.md" },
+  { "Recent posts" = "blog.md" },
   { "Professional" = [
     "professional/cv.md",
     "professional/contact.md"
@@ -35,7 +36,7 @@ extra_javascript = [
 
 [project.theme]
 # variant = "classic"
-# custom_dir = "overrides"
+custom_dir = "overrides"
 # favicon = "images/favicon.png"
 language = "en"
 features = [
@@ -69,8 +70,8 @@ features = [
 
 # logo = "assets/logo.png"
 
-# [project.theme.icon]
-# logo = "lucide/smile"
+[project.theme.icon]
+logo = "custom/book-open-solid-full"
 
 # [project.theme.font]
 # text = "Inter"
@@ -94,12 +95,33 @@ toggle.icon = "lucide/moon"
 toggle.name = "Switch to system preference"
 
 # [[project.extra.social]]
-# icon = "fontawesome/brands/github"
-# link = "https://github.com/user/repo"
-
-# [[project.extra.social]]
 # icon = "fontawesome/brands/mastodon"
 # link = "https://fosstodon.org/@user"
+
+[[project.extra.social]]
+icon = "custom/envelope-solid-full"
+link = "mailto:mr.levibarker@gmail.com?subject=I just saw yout cool website!"
+name = "E-mail"
+
+[[project.extra.social]]
+icon = "custom/google-scholar-brands-solid-full"
+link = "https://scholar.google.com/citations?user=zwOE-woAAAAJ&hl=en"
+name = "Google Scholar"
+
+[[project.extra.social]]
+icon = "custom/linkedin-brands-solid-full"
+link = "www.linkedin.com/in/levi-m-barker"
+name = "LinkedIn"
+
+[[project.extra.social]]
+icon = "custom/orcid-brands-solid-full"
+link = "https://orcid.org/0000-0002-7632-1359"
+name = "ORCID"
+
+[[project.extra.social]]
+icon = "custom/github-brands-solid-full"
+link = "https://github.com/lbarker1996"
+name = "GitHub"
 
 [project.theme.icon.admonition]
 note = "octicons/tag-16"
@@ -130,6 +152,9 @@ pymdownx.caret = {}
 pymdownx.details = {}
 pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
 pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.emoji.options.custom_icons = [
+  "overrides/.icons"
+]
 pymdownx.highlight.anchor_linenums = true
 pymdownx.highlight.line_spans = "__span"
 pymdownx.highlight.pygments_lang_class = true

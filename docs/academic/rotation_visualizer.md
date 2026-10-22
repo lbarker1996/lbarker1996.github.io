@@ -67,7 +67,8 @@ def vector_rotation_visualizer(rotation, pre_vector=None):
 ```
 
 ### An Example:
-##### Mathematically
+#### Mathematically
+Consider the following, where rotation $R$ acts on vector $v_0$ to generate $v'$
 
 $$
 \begin{align}
@@ -82,7 +83,7 @@ $$
 \end{align}
 $$
 
-##### Programmatically
+#### Programmatically
 The resulting 3D figure is thus.
 
 ![rotation_visualizer_sample_output](./attachments/rotation_visualizer_sample_output.png){width="500"}

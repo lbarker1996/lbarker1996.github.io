@@ -4,6 +4,9 @@
         <loc>https://www.example.com/</loc>
       </url>
       <url>
+        <loc>https://www.example.com/blog/</loc>
+      </url>
+      <url>
         <loc>https://www.example.com/professional/cv/</loc>
       </url>
       <url>

@@ -37,7 +37,7 @@ extra_javascript = [
 [project.theme]
 # variant = "classic"
 custom_dir = "overrides"
-# favicon = "images/favicon.png"
+favicon = "LB_favicon_calluna_bold.svg"
 language = "en"
 features = [
   "announce.dismiss",

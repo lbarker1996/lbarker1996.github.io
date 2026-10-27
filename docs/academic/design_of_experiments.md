@@ -9,4 +9,4 @@ Along with the formula sheet shown below, we were given a packet of \(t\)-tables
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/design_of_experiments)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/design_of_experiments).

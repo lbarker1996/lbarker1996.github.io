@@ -9,5 +9,5 @@ This was my first ever document created using $\LaTeX$, all the way back in 2020
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/sophomore_dynamics)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/sophomore_dynamics).
 

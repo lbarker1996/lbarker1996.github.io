@@ -1,3 +1,8 @@
+---
+hide:
+    - footer
+---
+
 # Formula Sheets
 
 In studying for exams, I have always known I was prepared once I was happy with my formula sheet.
@@ -7,7 +12,7 @@ Since then, my typesetting abilities have grown with every formula sheet I made;
 
 So here is a sampling of what I've done over the years! They are presented roughly in chronological order.
 Although some of the graphics were made by me, there are also screenshots from textbooks as well (*e.g.*, the many tables in Heat Transfer), for which I claim no credit.
-I do however claim credit for every falsehood and typo included.
+I do, however, claim credit for every falsehood and typo included.
 
 
 

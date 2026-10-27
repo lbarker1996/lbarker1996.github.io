@@ -28,4 +28,4 @@ They are presented here as seperate documents, because that was how I created th
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/heat_transfer)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/heat_transfer).

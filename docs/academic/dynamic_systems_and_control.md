@@ -12,7 +12,7 @@ The first document is from when I took the course as a Junior; the second is whe
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/dynamic_systems_and_control)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/dynamic_systems_and_control).
 
 <iframe
     src="./academic_showcase/dynamic_systems_and_control_instructor/dynamic_systems_and_control_instructor.pdf"
@@ -21,4 +21,4 @@ see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tre
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/dynamic_systems_and_control_instructor)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/dynamic_systems_and_control_instructor).

@@ -1,3 +1,8 @@
+---
+hide:
+    - footer
+---
+
 # Rotation Visualizer
 
 Rotation matrices are used throughout robotics and dynamics.
@@ -92,4 +97,4 @@ The resulting 3D figure is thus.
 ///
 
 ---
-see the code on my [GitHub](https://github.com/lbarker1996/python_and_matplotlib_snippets/tree/master/rotation_visualizer)
+see the code on my [GitHub](https://github.com/lbarker1996/python_and_matplotlib_snippets/tree/master/rotation_visualizer).

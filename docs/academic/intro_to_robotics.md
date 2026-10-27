@@ -14,7 +14,7 @@ and a second time when the instructor changed, and reworked the course content t
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/intro_to_robotics)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/intro_to_robotics).
 
 ### Robotics with a Twist
 
@@ -27,4 +27,4 @@ so I changed the page margins, and cut out the printed copies to accomodate this
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/robotics_with_a_twist)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/robotics_with_a_twist).

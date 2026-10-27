@@ -1,3 +1,7 @@
+---
+hide:
+    - footer
+---
 # Recent Posts
 
 

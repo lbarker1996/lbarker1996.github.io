@@ -10,4 +10,4 @@ so I changed the page margins, and cut out the printed copies to accomodate this
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/state_space)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/state_space).

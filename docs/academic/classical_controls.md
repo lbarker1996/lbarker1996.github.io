@@ -7,4 +7,4 @@
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/classical_controls)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/classical_controls).

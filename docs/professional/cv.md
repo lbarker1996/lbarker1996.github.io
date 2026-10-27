@@ -1,29 +1,34 @@
+---
+hide:
+    - footer
+---
+
 # Curiculum Vitae
 
-Click here for a [printer-friendly version](embedded_cv.md), otherwise, see below.
+Click here for a [printer-friendly version](embedded_cv.md); otherwise, see below.
 
 ---
 
 
 ### Education
 #### Ph.D. in Mechanical Engineering
-Spring 2027 | *Univeristy of Utah* | Salt Lake City, Utah
+Spring 2027 | *University of Utah* | Salt Lake City, Utah
 
 - [Magnetic & Medical Robotics Lab](https://mmrobotics.mech.utah.edu/) under Dr. Jake J. Abbott
 - Dissertation Title: "*Linear Modeling and Model-based Manipulation of Conductive Nonmagnetic Objects Using Magnetic Induction*"
 
 
 #### B.S./M.S in Mechanical Engineering
-Spring 2025 | *Univeristy of Utah* | Salt Lake City, Utah
+Spring 2025 | *University of Utah* | Salt Lake City, Utah
 
 - Realized a novel [stroke rehabilitation prototype](../academic/senior_design.md) for remapping neural pathways (Pat. Pend.)
-- Lead a mechatronics team in design and creation of a confection sorting robot
+- Lead a mechatronics team in the design and creation of a confection sorting robot
 
 ---
 
 ### Publications
 #### Peer-Reviewed Journal Articles:
-1. **L.M. Barker**, T.J. Allen, J.J., "Abbott Force and Torque Induced on a Conductive Nonmagnetic Cylinder by a Rotating Magnetic Dipole." *IEEE Transactions on Magnetics*, (under review)
+1. **L.M. Barker**, T.J. Allen, J.J. Abbott, "Force and Torque Induced on a Conductive Nonmagnetic Cylinder by a Rotating Magnetic Dipole." *IEEE Transactions on Magnetics*, (under review)
 2. T.J. Allen, **L.M. Barker**, J.J. Abbott, "[Assume a Spherical Cube: Bounding the Force and Torque Induced on a Conductive Nonmagnetic Cube by a Rotating Magnetic Dipole.](allen_magn_let_2026.md)" *IEEE Magnetics Letters*, 2026
 3. **L.M. Barker**, T.J. Allen, A.J. Sperry, J.J. Abbott, "[Revisiting the far-field model of the force and torque induced on a conductive nonmagnetic sphere by a rotating magnetic dipole.](barker_sci_rep_2025.md)" *Scientific Reports*, 2025
 
@@ -40,7 +45,7 @@ Summer 2026 | *University of Utah* | Salt Lake City, Utah
 Dec. 2021 -- May 2023 | *University of Utah* | Salt Lake City, Utah
 
 - Tutored 50 students weekly in mathematics, programming, statics, dynamics, robotics, manufacturing, design and CAD modeling
-- Encouraged critical thinking, time management, and test taking skills
+- Encouraged critical thinking, time management, and test-taking skills
 - Facilitated a safe and welcoming environment for learning
 
 #### Undergraduate Researcher
@@ -74,5 +79,5 @@ Aug 2019 -- May 2020 | *USTAR Bioenergy Center* | Logan, Utah
 ### Skills
 - **Technical skills**: Design of experiments, data visualization, CAD modeling, PCB design
 - **Programming**: OOP, Python, LaTeX, Git, MATLAB, Simulink, Arduino
-- **Professional skills**: Lifelong learner, critical thinker, team leader, detail oriented
+- **Professional skills**: Lifelong learner, critical thinker, team leader, detail-oriented
 

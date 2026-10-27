@@ -11,7 +11,7 @@ Due to the gap between the two courses, one can see quite a bit of growth betwee
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/mechanics_of_materials)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/mechanics_of_materials).
 
 ### Advanced Mechanics of Materials
 The exams in this course were open-book, so naturally the formula sheet swelled to fit eveything.
@@ -22,5 +22,5 @@ The exams in this course were open-book, so naturally the formula sheet swelled 
     style="border: none;">
 </iframe>
 
-see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/advanced_mechanics_of_materials)
+see the code on my [GitHub](https://github.com/lbarker1996/academic_showcase/tree/master/advanced_mechanics_of_materials).
 

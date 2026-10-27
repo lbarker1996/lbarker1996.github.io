@@ -1,3 +1,7 @@
+---
+hide:
+    - footer
+---
 
 # Introduction
 
@@ -7,7 +11,7 @@
 /// caption
 I'm Levi!
 
-Welcome to my website, I hope you like it.
+Welcome to my website; I hope you like it.
 ///
 
 

@@ -26,6 +26,8 @@ jobs:
       - uses: actions/configure-pages@v6
 
       - uses: actions/checkout@v7
+        with:
+          submodules: recursive
 
       - uses: actions/setup-python@v6
         with:

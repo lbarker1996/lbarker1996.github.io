@@ -11,8 +11,8 @@ site_author = "Levi M. Barker"
 # edit_uri = "edit/main/docs/"
 
 nav = [
-  { "About me" = "index.md" },
-  { "Recent posts" = "blog.md" },
+  { "About Me" = "index.md" },
+  { "Recent Posts" = "blog.md" },
   { "Professional" = [
     "professional/cv.md",
     "professional/contact.md"

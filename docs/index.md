@@ -6,7 +6,7 @@ hide:
 # Introduction
 
 
-![headshot](/professional/attachments/headshot_white_removed.png){width="250"}
+![headshot](/professional/attachments/headshot_white_removed.jpg){width="250"}
 
 /// caption
 I'm Levi!

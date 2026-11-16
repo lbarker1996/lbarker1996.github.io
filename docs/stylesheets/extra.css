@@ -1,0 +1,8 @@
+/* Hide GitHub repository statistics in the header */
+.md-header__source .md-source__fact {
+    display: none;
+}
+/* Hide repository statistics in the mobile navigation drawer */
+.md-nav__source .md-source__facts {
+    display: none;
+}

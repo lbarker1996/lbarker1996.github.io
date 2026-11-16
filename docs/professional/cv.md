@@ -18,7 +18,7 @@ Spring 2027 | *University of Utah* | Salt Lake City, Utah
 - Dissertation Title: "*Linear Modeling and Model-based Manipulation of Conductive Nonmagnetic Objects Using Magnetic Induction*"
 
 
-#### B.S./M.S in Mechanical Engineering
+#### B.S./M.S. in Mechanical Engineering
 Spring 2025 | *University of Utah* | Salt Lake City, Utah
 
 - Realized a novel [stroke rehabilitation prototype](../academic/senior_design.md) for remapping neural pathways (Pat. Pend.)
@@ -59,20 +59,20 @@ Summer 2022 | *Human Centered Haptics and Robotics Lab* | Salt Lake City, Utah
 Summer 2021 | *Maersk* | Salt Lake City, Utah
 
 - Implemented aspects of Lean, Six Sigma, and 5S in a warehouse-within-a-warehouse
-- Analyzed and improved productivity by introducing protocol and personnel training reducing annual overhead by $40,000
+- Analyzed and improved productivity by introducing protocol and personnel training [reducing annual overhead by $40,000](awards_and_recognition.md#letters-of-recommendation)
 
 #### Pyrolysis Plant Operator
 Aug 2019 -- May 2020 | *USTAR Bioenergy Center* | Logan, Utah
 
 - Collected and analyzed production samples, in accordance with safety protocol
--Troubleshooted and rectified mechanical, electrical, and thermodynamical problems
+- Troubleshooted and rectified mechanical, electrical, and thermodynamical problems
 
 ---
 
 ### Recognition
 - **Accessibility Training Certificate** -- Price College of Engineering, 2026
-- **Student Leader of the Year** -- Department of Mechanical Engineering, 2023
-- **Certified Solidworks Associate** --  Dassault Systemes, 2018
+- **[Student Leadership Award](awards_and_recognition.md#student-leadership-award-2022-2023)** -- Department of Mechanical Engineering, 2022-2023
+- **[Solidworks Design Associate](certifications.md#solidworks-design-associate)** --  Dassault Systèmes, 2020
 
 ---
 

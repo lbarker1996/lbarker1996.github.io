@@ -1,13 +1,13 @@
 [project]
-site_url = "https://www.example.com/"
+site_url = "levimbarker.com"
 site_name = "Levi M. Barker"
 site_description = "Personal portfolio and blog of Levi M. Barker."
 site_author = "Levi M. Barker"
 
 # copyright = "Copyright &copy; 2026 Levi M. Barker"
 
-# repo_url = "https://github.com/user/repo"
-# repo_name = "user/repo"
+repo_url = "https://github.com/lbarker1996/lbarker1996.github.io"
+repo_name = "lbarker1996/portfolio"
 # edit_uri = "edit/main/docs/"
 
 nav = [
@@ -27,7 +27,7 @@ nav = [
   ] },
 ]
 
-# extra_css = ["stylesheets/extra.css"]
+extra_css = ["stylesheets/extra.css"]
 # extra_javascript = ["javascripts/extra.js"]
 extra_javascript = [
   "javascripts/mathjax.js",
@@ -72,6 +72,7 @@ features = [
 
 [project.theme.icon]
 logo = "custom/book-open-solid-full"
+repo = "custom/github-brands-solid-full"
 
 # [project.theme.font]
 # text = "Inter"

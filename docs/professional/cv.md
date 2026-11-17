@@ -70,7 +70,7 @@ Aug 2019 -- May 2020 | *USTAR Bioenergy Center* | Logan, Utah
 ---
 
 ### Recognition
-- **Accessibility Training Certificate** -- Price College of Engineering, 2026
+- **[Accessibility Training Certificate](certifications.md#accessibility-training)** -- Price College of Engineering, 2026
 - **[Student Leadership Award](awards_and_recognition.md#student-leadership-award-2022-2023)** -- Department of Mechanical Engineering, 2022-2023
 - **[Solidworks Design Associate](certifications.md#solidworks-design-associate)** --  Dassault Systèmes, 2020
 

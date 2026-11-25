@@ -1,0 +1,514 @@
+\documentclass[twocolumn]{article}    % two-column because cheat sheets fit like that
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}    % allows math to happen
+\usepackage{marvosym}
+\usepackage{textcomp}
+\usepackage{geometry}   % allows you to change the margins and headers/footers, and more
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{multirow} 
+\usepackage{graphicx}   % allows for inclusion of graphics or several types, i think
+\usepackage{float}      % SUPER  IMPORTANT. lets you tell LaTeX where to put your graphics, as opposed to where it feels
+\usepackage{wrapfig}    % Lets text wrap around figures, more relevant for reports really
+\usepackage{caption}
+\usepackage{amssymb}    
+\usepackage{ulem}       % allows strikethrough and some
+\usepackage[table]{xcolor}  % enhances tables by allowing colors to happen. notably, as background/fill colors
+\usepackage{bondgraph}  % allows bond graphs
+\usepackage{caption}    % lots of control of captions and caption geometries
+\usepackage{comment} % allows block comments to occur
+\usepackage{blindtext}
+
+\geometry{letterpaper, total={4.8in, 2.8in}}      
+
+\begin{document}
+\pagestyle{empty}
+\footnotesize                      % small because, it's a cheat sheet after all, why not cram it
+
+\begin{center}
+    Levi Barker \hspace{35pt} U0959362
+\end{center}
+\vspace{-10pt}
+\underline{General Knowledge}
+\begin{itemize}
+    \item \(det(A)\neq0\), invertible, full rank, lin. ind. cols/rows, nullity=0, non-singular
+    \item Zero-state is "synonym" for TF thinking
+    \item D, U, and L matrices show eigs on diag 
+    \item A J Matrix has 1 block for each grade-1 eigenvector. Ex: 3x3 w/ multiplicity 3 results in one J block as the entire matrix
+    \item Eigvector order in \(V\) and \(J\) match 
+    \item nullity\((A-\lambda_iI)\) = \# of J-blocks for \(\lambda_i\)
+    \item Basis is lin. ind. cols of \(A\), null space is remaining cols of \(A\)
+    \item Z transform wants func. of \(z^{-1}\) not \(z\) 
+    \item A square matrix satisfies it's own \(\Delta(\lambda)\)
+    \item SS models are equiv. if same eigenvalues. Zero-state equiv. if same TF (matrix)
+\end{itemize}
+\begin{equation*}
+    \hspace{-10pt} G(s) = C(Is-A)^{-1}B+D \hspace{5pt} AQ = Q\Lambda \hspace{5pt} AV=VJ
+\end{equation*}
+\begin{equation*}
+    \overbrace{y_3(t) = \alpha y_1(t)}^\text{Homogeneity} \hspace{5pt}\text{if} \hspace{5pt}
+    \begin{cases}
+        x_3(0) = \alpha x_1(0)\\
+        u_3(t) = \alpha u_1(t)
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    \hspace{-7.5pt}
+    \overbrace{y_3(t) = y_1(t) + y_2(t)}^\text{Additivity} \text{if}
+    \begin{cases}
+        x_3(0) = x_1(0) + x_2(0) \\
+        u_3(t) = u_1(t) + u_2(t)
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    \hat{A}_{\text{comp.}} = \mathcal{C}^{-1} A \mathcal{C} \hspace{15pt} \text{follow through in sys.}
+\end{equation*}
+\begin{equation*}
+    \underbrace{\begin{bmatrix}
+        -\alpha_1 & -\alpha_2 & -\alpha_3 & -\alpha_4 \\
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0
+    \end{bmatrix}}_{ \hspace{5pt}
+    \Delta(\lambda) = 
+    \lambda^4 + \alpha_1 \lambda^3 + \alpha_2 \lambda^2 + \alpha \lambda + \alpha_4}
+\end{equation*}
+\begin{equation*}
+    \hspace{-10pt} (A-I\lambda)v_i = q_i \hspace{2.5pt} \Longleftrightarrow \hspace{2.5pt} v_i \text{ is gen. eigvec of } A
+\end{equation*}
+\begin{align*}
+    y[k+2] + 5y[k+1] + 10y[k] &=  7u[k] \\
+    z^2Y[z] +5zY[z]+10Y[z]&=7U[z]
+\end{align*}
+\underline{General Solutions}\\
+\begin{equation*}
+    x(t) = e^{At}x(0) + \int_0^te^{A(t-\tau)} Bu(t)d\tau
+\end{equation*}
+\begin{equation*}
+    x[k] = A^kx[0] \hspace{10pt} \text{  for y, plug x into y eq.}
+\end{equation*}
+\begin{equation*}
+    x(t) = e^{Q\Lambda Q^{-1}t}x(0) = Qe^{\Lambda t} Q^{-1} x(0)
+\end{equation*}
+\underline{Functions of Matrices}\\
+\begin{equation*}
+    \begin{matrix}
+        e^{At}= \\
+        \\
+        \text{(applies to} \\
+        \text{J blocks)}
+    \end{matrix}
+    \begin{bmatrix}
+        e^{\lambda t} & t e^{\lambda t} & \frac{t^2}{2!} e^{\lambda t} & \frac{t^3}{3!} e^{\lambda t}\\
+        0 & e^{\lambda t} & t e^{\lambda t} & \frac{t^2}{2!} e^{\lambda t} \\
+        0 & 0 & e^{\lambda t} & t e^{\lambda t} \\
+        0 & 0 & 0 & e^{\lambda t}
+    \end{bmatrix} \hspace{5pt} 
+\end{equation*}
+\begin{equation*}
+    e^A = 1 + A^2/2! + A^3/3! + A^4/4! +...
+\end{equation*}
+\begin{equation*}
+    sin(A) = A - A^3/3! +A^5/5! - A^7/7!+ ...
+\end{equation*}
+\begin{equation*}
+    cos(A) = 1 - A^2/2! + A^4/4! - A^6/6! +... 
+\end{equation*}
+\begin{equation*}
+    f(\hat{A}) = Q^{-1}f(A)Q \hspace{15pt} f(A) = Q^{-1}f(\hat{A})Q
+\end{equation*}
+\begin{equation*}
+    \hspace{-5pt} \text{if } A = 
+    \begin{bmatrix}
+        A_1 & 0\\
+        0& A_2
+    \end{bmatrix}
+    \rightarrow f(A) = 
+    \begin{bmatrix}
+        f(A_1) & 0\\
+        0 & f(A_2)\\
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \begin{matrix}
+        J^k = \\
+        \text{(single}\\
+        \text{block)}
+    \end{matrix} 
+    \begin{bmatrix}
+        \lambda^k & k\lambda^{k-1} & \frac{k(k-1)}{2!} \lambda^{k-2}\\
+        0 & \lambda^k & k\lambda^{k-1} \\
+        0 & 0 & \lambda^k \\
+    \end{bmatrix}
+\end{equation*}
+\noindent
+\underline{Polynomials}\\
+\(\Delta(\lambda)\) has all eigvalues. \(\psi (\lambda)\) only includes the single largest J block for each eigvalue  Ex:
+\begin{equation*}
+    \hspace{-15pt}
+    \begin{bmatrix}
+        \lambda_1 & 1 & 0 &0\\
+        0 &  \lambda_1 & 1 & 0\\
+        0 & 0 & \lambda_1 & 0\\
+        0 & 0 & 0 & \lambda_2
+    \end{bmatrix}  
+    \begin{cases}
+        \Delta(\lambda) = (\lambda-\lambda_1)^3(\lambda-\lambda_2)\\
+        \psi (\lambda) = (\lambda-\lambda_1)^3(\lambda-\lambda_2)
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    \begin{bmatrix}
+        \lambda_1 & 1 & 0 &0\\
+        0 &  \lambda_1 & 0 & 0\\
+        0 & 0 & \lambda_1 & 0\\
+        0 & 0 & 0 & \lambda_1
+    \end{bmatrix} 
+    \begin{cases}
+        \Delta (\lambda) = (\lambda-\lambda_1)^4\\
+        \psi (\lambda) = (\lambda-\lambda_1)^2
+    \end{cases}
+\end{equation*}
+
+\noindent
+\underline{Realizations (method two)} \hspace{15pt} (for i inputs)\\
+\begin{equation*}
+    G(s) = \frac{\begin{bmatrix}
+        \beta_{11}s^3 & \beta_{12}s^2 & \beta_{13}s & \beta_{14}\\
+        \beta_{21}s^3 & \beta_{22}s^2 & \beta_{23}s & \beta_{24}
+    \end{bmatrix}} {s^4 + \alpha_1s^3 + \alpha_2s^2 + \alpha_3 s +\alpha_4} + \overbrace{\begin{bmatrix}
+        d_1\\ d_2
+    \end{bmatrix}}^{G(\infty)}
+\end{equation*}
+\begin{equation*}
+    A = \begin{bmatrix}
+        -\alpha_1 & -\alpha_2 & -\alpha_3 & -\alpha_4 \\
+        1 & 0  & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0\\
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    B_i = \begin{matrix}
+        [1 & 0]^T 
+    \end{matrix} \hspace{30pt} D_i = \begin{matrix}
+        [d_1 & d_2]^T
+    \end{matrix}
+\end{equation*}
+\begin{equation*}
+    C_i = \begin{bmatrix}
+        \beta_{11} & \beta_{12} & \beta_{13} & \beta_{14}\\
+        \beta_{21} & \beta_{22} & \beta_{23} & \beta_{24}
+    \end{bmatrix}
+\end{equation*}
+
+Then 
+\begin{equation*}
+\begin{bmatrix}
+    \Dot{x}_1 \\ \Dot{x}_2
+\end{bmatrix} = \begin{bmatrix}
+    A_1 & 0 \\ 0 & A_2
+\end{bmatrix} \begin{bmatrix}
+    x_1\\x_2
+\end{bmatrix} + \begin{bmatrix}
+    b_1 & 0 \\ 0 & b_2
+\end{bmatrix} u
+\end{equation*}
+\begin{equation*}
+    y = \begin{bmatrix}
+        C_1 & C_2
+    \end{bmatrix} \begin{bmatrix}
+    x_1\\x_2
+\end{bmatrix} + \begin{bmatrix}
+    d_1 & d_2 
+\end{bmatrix} u
+\end{equation*}
+
+\noindent
+\underline{Stability}\\
+BIBO: zero-state response \(\to G(0)*u(t)\). Stable iff every pole if OLHP/open unit circle\\
+AS: all \(Re(\lambda_i)<0\) for C, or \(|\lambda_i|<1\) for D. And \(x_i(\infty) \to 0 \hspace{5pt} \forall i\)\\
+MS: Allow \(Re(\lambda_i) = 0\) for C, or \(|\lambda_i|=1\) for D, only for simple roots (J-blocks sized 1)
+    
+\noindent
+\underline{Controllable If}
+\begin{itemize}
+    \item \(\rho(\mathcal{C}) = \rho(\begin{matrix}
+        [B & AB & ... & A^{n-1}B]
+    \end{matrix}) = n\) 
+    \item \(\rho(\begin{matrix}
+        [A-\lambda I & B]
+    \end{matrix}) = n \hspace{5pt} \forall \lambda_i\)
+    \item Rows(\(B\)) aligned with bottom of each J-block are lin ind if repeated, else nonzero
+\end{itemize}
+
+
+\noindent
+\underline{Observable If}
+\begin{itemize}
+    \item \(\rho(\mathcal{O}) = \rho\begin{matrix}
+        [C & CA & ... & CA^{n-1}]^T 
+    \end{matrix}=n\)
+    \item \(\rho(\begin{matrix}
+        [A-\lambda I & C]^T
+    \end{matrix}) = n \hspace{5pt} \forall \lambda_i\) 
+    \item Cols(\(C\)) aligned with left of each J-block are lin ind if repeated, else nonzero
+\end{itemize}
+
+\noindent
+\underline{Kalman Decomposition}\\
+\textbf{if} \(\rho(\mathcal{C}) = n_1<n\):\\
+form \(P^{-1} = \begin{matrix}
+        [q_1 & ... & q_{n_1} & ... q_n]
+        \end{matrix}\) with  \(n_1\) lin ind cols of \(\mathcal{C}\), and rest to make invertible, then \(P^{-1} \hat{x} = x\) and 
+        \begin{equation*}
+            \begin{bmatrix}
+                \hat{\Dot{x}}_C \\ \hat{\Dot{x}}_{\overline{C} }
+            \end{bmatrix} = \begin{bmatrix}
+                \hat{A}_C & \hat{A}_{12} \\ 
+                0 & \hat{A}_{\overline{C}}
+            \end{bmatrix} \begin{bmatrix}
+                \hat{x}_C \\ \hat{x}_{\overline{C}}
+            \end{bmatrix} + \begin{bmatrix}
+                \hat{B}_C \\ 0
+            \end{bmatrix} u
+        \end{equation*}
+        \begin{equation*}
+            y = \begin{bmatrix}
+                \hat{C}_C & \hat{C}_{\overline{C}}
+            \end{bmatrix} \begin{bmatrix}
+                \hat{x}_C \\ \hat{x}_{\overline{C}}
+            \end{bmatrix} + Du
+        \end{equation*}
+        
+        \noindent
+        \textbf{if} \(\rho(\mathcal{O}) =n_2<n\):\\
+        form \(P = \begin{matrix}
+            [P_1 & ... & P_{n_2} & ... P_n]^T
+        \end{matrix}\) with \(n_2\) lin ind rows of \(\mathcal{O}\), and rest to make invertible, then \(P^{-1} \hat{x} = x\) and 
+        \begin{equation*}
+            \begin{bmatrix}
+                \hat{\Dot{x}}_O \\ \hat{\Dot{x}}_{\overline{O} }
+            \end{bmatrix} = \begin{bmatrix}
+                \hat{A}_O & 0 \\ 
+                \hat{A}_{21} & \hat{A}_{\overline{O}}
+            \end{bmatrix} \begin{bmatrix}
+                \hat{x}_O \\ \hat{x}_{\overline{O}}
+            \end{bmatrix} + \begin{bmatrix}
+                \hat{B}_O \\ \hat{B}_{\overline{O}}
+            \end{bmatrix} u
+        \end{equation*}
+        \begin{equation*}
+            y = \begin{bmatrix}
+                \hat{C}_O & 0
+            \end{bmatrix} \begin{bmatrix}
+                \hat{x}_O \\ \hat{x}_{\overline{O}}
+            \end{bmatrix} + Du
+        \end{equation*}
+    
+   
+    
+\noindent
+\underline{Controllability After Sampling}\\
+If \((A,B)\) is controllable, a sufficient\\ 
+condition for \((A_d, B_d)\) controllability is:
+\begin{equation*}
+    \text{if } Re(\lambda_i) - Re(\lambda_j) = 0 \hspace{10pt} \lambda_i , \lambda_j \in A, \text{ then}
+\end{equation*}
+\begin{equation*}
+    \text{pick } T: |Im(\lambda_i)| - |Im(\lambda_j)| \neq \frac{2\pi m}{T} \hspace{5pt} m \in \mathcal{N}_1
+\end{equation*}
+
+
+
+\noindent
+\underline{CL State Feedback}
+\begin{equation*}
+    u = r - k \otimes x \hspace{10pt}  \Dot{x} = (A-Bk) x + Br
+\end{equation*}
+\begin{equation*}
+    (A-Bk, B) \text{ is controllable iff } (A,B) \text{ is}
+\end{equation*}
+\begin{equation*}
+    k_i = \hat{\alpha}_i - \alpha_i = \text{des }- \text{current}
+\end{equation*}
+\begin{equation*}
+    x_{ss} = -(A-Bk)^{-1}Br \hspace{20pt} y_{ss} = Cx_{ss}
+\end{equation*}
+\begin{enumerate}
+    \item Controllable? 
+    \item Find \(A_{CL}= (A-B\otimes k)\) in terms of \(k_i\)
+    \item \(\Delta_{CL}(s) = det(\lambda I-A_{CL}) \rightarrow \alpha_i\)
+    \item Determine \(\alpha_i\) from \(\Delta_{des}(s)\)
+    \item \(g_{dc}= C(A-Bk)^{-1}B+D \hspace{20pt} r = y/ g_{dc}\)
+\end{enumerate}
+\underline{Stabilization}
+\begin{equation*}
+    \hspace{-25pt} \begin{bmatrix}
+        \hat{\Dot{x}}_C \\ \hat{\Dot{x}}_{\overline{C}} 
+    \end{bmatrix} = \begin{bmatrix}
+        \hat{A}_C - \hat{B}_C\hat{k}_C & \hat{A}_{12} -\hat{B}_C\hat{k}_{\overline{C}} \\
+        0 & \hat{A}_{\overline{C}}
+    \end{bmatrix} \begin{bmatrix}
+        \hat{x}_C \\ \hat{x}_{\overline{C}} 
+    \end{bmatrix} + \begin{bmatrix}
+        \hat{B}_C \\ 0
+    \end{bmatrix} r
+\end{equation*}
+\begin{equation*}
+    \text{if } u = r - \begin{matrix}
+        [k_C & k_{\overline{C}}]
+    \end{matrix} \otimes \begin{matrix}
+        [x_C & x_{\overline{C}}]
+    \end{matrix}^T
+\end{equation*}
+Stabilizable: if uncontrollable states are already stable
+
+\vspace{30pt}
+\begin{center}
+    Levi Barker \hspace{35pt} U0959362
+\end{center}
+
+
+
+%% NOT INCLUDED IN 3x5s
+\newpage 
+\begin{equation*}
+    A^{-1} = \frac{A_{co}^T}{det(A)} \hspace{15pt} ||x||_k \triangleq \left( \Sigma_{i=1}^n |x_i|^k \right)^{1/k}
+\end{equation*}
+
+
+\noindent
+\textbf{Method ONE}: \hspace{60pt} \(D = G(\infty)\)
+\begin{equation*}
+    G_{sp}(s) = \frac{1}{D(s)}
+    \begin{matrix}
+        [N_1s^{n-1} & N_2s^{n-2} & ... & N_n]\\
+    \end{matrix} 
+\end{equation*}
+\begin{equation*}
+    A = \begin{bmatrix}
+        -\alpha_1I & -\alpha_2I & ... & -\alpha_{n-1}I & -\alpha_nI \\
+        I & 0 & ... & 0 & 0 \\
+        0 & I & ...& 0 & 0 \\
+          &   & \ddots &  & \\
+        0 & 0 & ... & I & 0\\
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    B = \begin{matrix}
+        [I & 0 & 0 & ... & 0]^T
+    \end{matrix} \hspace{9pt} C =[N_1 + ... + N_n]
+\end{equation*}
+Will work, but not in fewest states.
+
+\noindent
+\textbf{Method TWO}: \hspace{60pt} \(D = G(\infty)\)
+Generate SS models column by column
+\begin{equation*}
+    \begin{bmatrix}
+        \Dot{x}_1 \\ \Dot{x}_2
+    \end{bmatrix} = \begin{bmatrix}
+        A_1 & 0\\ 0 & A_2
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_1 \\ x_2
+    \end{bmatrix} + \begin{bmatrix}
+        b_1 & 0\\ 0 & b_2
+    \end{bmatrix} \begin{bmatrix}
+        u_1 \\ u_2
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    y = \begin{bmatrix}
+        C_1 & C_2
+    \end{bmatrix} \Vec{x} + G(\infty)\Vec{u}
+\end{equation*}
+Will work, in fewest possible states.
+
+
+    \noindent
+    \underline{LQR}
+    \begin{equation*}
+        \min(J) = \int_0^\infty (x^T(\tau)Qx(\tau) + u^T(\tau)Ru(\tau))d\tau
+    \end{equation*}
+    \(Q\) must be +ve semi-definite. \(x^T(t)Qx(t) \geq 0 \forall x(t) \neq 0\). Diags must be positive OR zero. If any off-diag. causes any \(\lambda=0\), not semi-definite.\\
+    \(R\) must be positive definite. \(u^T(t)Ru(t) > 0 \forall u(t) \neq 0\). Diags must be greater than zero.
+    \begin{equation*}
+        u = -Kx \hspace{10pt} K = R^{-1} B^T P \text{ where } P \text{ solves:}
+    \end{equation*}
+    \begin{equation*}
+        ARE: \hspace{10pt} A^TP + PA - PBR^{-1}B^TP + Q =0
+    \end{equation*}
+    LQR is iterative. Pick \(Q\) and \(R\), run sim with hard ic's and tweak to achieve desired behavior of system.
+    
+\newpage
+\noindent
+\underline{Full Kalman Decomposition}
+    \begin{align*}
+        \hspace{-5pt}
+        \begin{bmatrix}
+            \hat{\Dot{x}}_{CO}\\ 
+            \hat{\Dot{x}}_{C\overline{O}}\\
+            \hat{\Dot{x}}_{\overline{C}O}\\
+            \hat{\Dot{x}}_{\overline{CO}}\\
+        \end{bmatrix} =& \begin{bmatrix}
+            \hat{A}_{CO} & 0 & \hat{A}_{13} & 0 \\
+            \hat{A}_{21} & \hat{A}_{C\overline{O}} & \hat{A}_{23} & \hat{A}_{24} \\
+            0 & 0 & \hat{A}_{\overline{C}O} & 0\\
+            0 & 0 &\hat{A}_{43} & \hat{A}_{\overline{CO}}
+        \end{bmatrix} \begin{bmatrix}
+            \hat{x}_{CO}\\ 
+            \hat{x}_{C\overline{O}}\\
+            \hat{x}_{\overline{C}O}\\
+            \hat{x}_{\overline{CO}}
+        \end{bmatrix}\\
+        &+ \begin{bmatrix}
+            \hat{B}_{CO} & 
+            \hat{B}_{C\overline{O}} &  0 & 0
+        \end{bmatrix}^T u
+    \end{align*}
+    \begin{equation*}
+        y = \begin{bmatrix}
+            \hat{C}_{CO} & 0 & \hat{C}_{\overline{C}O} & 0 
+        \end{bmatrix} \begin{bmatrix}
+            \hat{x}_{CO}\\ 
+            \hat{x}_{C\overline{O}}\\
+            \hat{x}_{\overline{C}O}\\
+            \hat{x}_{\overline{CO}}
+        \end{bmatrix} + Du
+    \end{equation*}
+    
+    \noindent
+    \underline{Kalman Filter}\\
+    Incorporate system and sensor noise as a benefit    
+    \begin{enumerate}
+        \item The discrete system model 
+        \begin{align*}
+            x_{t+1} =& Ax_t + Bu_t + m \hspace{5pt} &m \sim \mathcal{N}(0,M)\\
+            z_{t+1} =& Cx_t + n          & n \sim  \mathcal{N}(0,N)
+        \end{align*}
+        
+        \item Incorporate the past system behavior
+        \begin{equation*}
+            x_{t-1}  \sim \mathcal{N}(\hat{x}_{t-1}, \varepsilon_{t-1})
+        \end{equation*}
+        
+        \item Do the process update (in code)
+        \begin{align*}
+            \hat{x}_t' =& A\hat{x}_{t-1} + Bu_{t-1}\\
+            \varepsilon_t' =& A\varepsilon_{t-1}A^T + m
+        \end{align*}
+        
+        \item Do the measurement update (in code)
+        \begin{align*}
+            K_t =& \varepsilon_t' C^T (C\varepsilon_t' C^T+ n)^{-1}\\
+            \hat{x}_t =& \overbrace{\hat{x}_t'}^{\text{w/o sensors}} + \overbrace{K_t \underbrace{(z_t-C\hat{x}_t')}_{\text{innovation}} }^{\text{w/ sensors}}\\
+            \varepsilon_t =& \varepsilon_t' - K_t C \varepsilon_t' \hspace{7.5pt} \text{// Update uncert.}
+        \end{align*}
+    \end{enumerate}
+    \vspace{20pt}
+    \begin{center}
+        Levi Barker \hspace{35pt} U0959362
+    \end{center}
+\end{document}

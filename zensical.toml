@@ -14,8 +14,9 @@ nav = [
   { "About Me" = "index.md" },
   { "Recent Posts" = "blog.md" },
   { "Professional" = [
+    "professional/contact.md",
     "professional/cv.md",
-    "professional/contact.md"
+    "professional/publications.md"
   ] },
   { "Academic" = [
     "academic/formula_sheets.md",

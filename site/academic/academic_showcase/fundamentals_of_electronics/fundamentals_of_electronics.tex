@@ -1,0 +1,289 @@
+\documentclass[twocolumn, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{marvosym}
+\usepackage{textcomp}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{caption}
+
+\geometry{a4paper, margin=.75in}
+
+
+
+\begin{document}
+\small{
+
+\section*{Fundamentals of Electronics}
+\subsection*{Equations}
+     
+    \begin{equation*}
+        V=\frac{W}{Q} \hspace{15pt} \textbf{F}=\textit{k}_e\frac{Q_1Q_2}{d^2} \hspace{15pt} I=\frac{Q}{t}
+    \end{equation*}
+    
+    \begin{equation*}
+        \text{Life of a battery}=\frac{\text{amp-hour rating}}{\text{amps drawn}}
+    \end{equation*}
+    \begin{equation*}
+        R=\rho \frac{l}{A}[1+\alpha_{20}\Delta T]
+    \end{equation*}
+
+    \begin{equation*}
+        V=IR \hspace{15pt} G=\frac{1}{R} \hspace{15pt} P=\frac{W}{t} \hspace{15pt} 
+    \end{equation*}
+    
+    \begin{equation*}
+        P=\frac{W}{t}=\frac{QV}{t}=IV=\frac{V^2}{R}=I^2R
+        \end{equation*}
+        \begin{equation*}
+            W_{\text{in}}=W_{\text{lost}}+W_{\text{stored}}+W_{\text{out}}
+        \end{equation*}
+        
+        \begin{equation*}
+            P_{\text{in}}=P_{\text{lost}}+P_{\text{stored}}+P_{\text{out}}
+        \end{equation*}
+        
+        \begin{equation*}
+            W_{\text{stored}}=\frac{1}{2}CV^2=\frac{Q^2}{2C} \hspace{15pt} W_{\text{stored}}=\frac{1}{2}LI^2 
+        \end{equation*}
+        
+        \begin{equation*}
+            \eta=\frac{W_{\text{out}}}{W_{\text{in}}}=\frac{P_{\text{out}}}{P_{\text{in}}} 
+        \end{equation*}
+        
+        \begin{equation*}
+            \eta_{\text{total}}=\eta_1\times \eta_2\times ...\times \eta_n 
+        \end{equation*}
+        
+        \begin{equation*}
+            \text{Voltage Regulation}=\frac{V_{\text{no load}}-V_{\text{full load}}} {V_{\text{full load}}}
+        \end{equation*}
+        
+        \begin{equation*}
+            \varepsilon =\frac{\textbf{F}}{Q} =\frac{V}{d} \hspace{15pt}  C=\frac{Q}{V}=\varepsilon \frac{A}{d}  \hspace{15pt} \varepsilon_R=\frac{\varepsilon}{\varepsilon_0}
+        \end{equation*}
+        
+        \begin{equation*}
+            \tau_C=RC \hspace{15pt} \tau_L=\frac{L}{R} \hspace{15pt} L=\frac{MN^2A}{l}
+        \end{equation*}
+        
+        \begin{equation*}
+            i_C=C\frac{d}{dt} v_C \hspace{15pt} v_{L,\text{ avg}}=\frac{\Delta i_L}{\Delta t}
+        \end{equation*}
+        
+        \begin{equation*}
+            t=-\tau ln \left(1-\frac{v_C}{V_{\text{max}}}\right) 
+        \end{equation*}
+        
+        \begin{equation*}
+            t=-\tau ln \left(1-\frac{i_L}{I_{\text{max}}}\right)
+        \end{equation*}
+        
+        \begin{equation*}
+            v_C=v_f-(v_f-v_i)e^{-t/\tau}
+        \end{equation*}
+        
+        \begin{equation*}
+            i_L=I_i-(I_f-I_i)e^{-t/\tau}
+        \end{equation*}
+        
+Charging:
+        \begin{equation*}
+            v_C=E(1-e^{-t/\tau}) \hspace{15pt}i_C=\frac{E}{R_T}e^{-t/\tau}
+        \end{equation*}
+        
+Discharging:
+        \begin{equation*}
+            v_C=Ee^{-t/\tau}  \hspace{15pt}i_C=\frac{E}{R_T}(1-e^{-t/\tau})
+        \end{equation*}
+        
+        
+For Maximum power transfer:
+        
+        \begin{equation*}
+            R_L=R_{TH} \hspace{15pt} P_{L,\text{ max}} =\frac{V_{TH}^2}{4R_{TH}}
+        \end{equation*}
+        
+\subsubsection*{Alternating Current}
+        \begin{equation*}
+            I_{\text{rms}} = \frac{I_{\text{max}}}{\sqrt{2}} \hspace{15pt}  V_{\text{rms}} =\frac{V_{\text{max}}}{\sqrt{2}} 
+        \end{equation*}
+        
+        \begin{equation*}
+            \omega=2\pi f  \hspace{15pt} T=\frac{1}{f} \hspace{15pt} \textbf{Y}=\frac{1}{\textbf{Z}}  
+        \end{equation*}
+        
+        
+        \begin{equation*}
+            X_L= \omega L \hspace{15pt} X_C=\frac{1}{\omega C} \hspace{15pt}B=\frac{1}{X}
+        \end{equation*}
+    
+        \(G\) = (\text{sum of areas})/(\text{length of the curve})
+        
+        \begin{equation*}
+            pf=cos|\theta_v-\theta_i| \hspace{15pt} P_{\text{avg}}=V_{\text{rms}}I_{\text{rms}}pf
+        \end{equation*}
+        
+        \begin{center}
+            pf leading: the current leads the voltage\\
+            pf lagging: the current lags the voltage
+        \end{center}
+        
+
+\subsubsection*{Impedance}
+        The complex opposition to changing current/voltage.
+    
+    \begin{equation*}
+        \textbf{Z}_C=R_C+jX_C \hspace{15pt} \textbf{Z}_L=R_L+jX_L
+    \end{equation*}
+        \noindent
+        Where:
+        \begin{itemize}
+            \item R is the real form (resistance) [\(\Omega\)]
+            \item X is the imaginary form (reactance) [\(\Omega\)]
+        \end{itemize}
+       
+        
+\subsubsection*{Admittance}
+        The complex allowance of changing current/voltage.
+        \begin{equation*}
+            \textbf{Y}_C= G_C+jB_C \hspace{15pt} \textbf{Y}_L = G_L +jB_L
+        \end{equation*}
+        \noindent
+        Where:
+        \begin{itemize}
+            \item G is the real form (conductance) [S]
+            \item B is the imaginary form (susceptance) [S]
+        \end{itemize}
+        
+        
+        
+\subsubsection*{Series Circuits} 
+
+         \begin{equation*}
+            \sum V_{\text{closed loop}}=0 \hspace{15pt} \frac{V_x}{V_S}=\frac{R_x}{R_T}
+        \end{equation*}
+        
+        \begin{equation*}
+            R_{T}=R_1+R_2+...+R_n \hspace{15pt} 
+        \end{equation*}
+        
+        \begin{equation*}
+            \frac{1}{C_T}=\frac{1}{C_1}+\frac{1}{C_2}+...+\frac{1}{C_N}
+        \end{equation*}
+        
+        \begin{equation*}
+            L_T=L_1+L_2+...+L_N
+        \end{equation*}
+        
+        \begin{equation*}
+            \textbf{Z}_T = \textbf{Z}_1 + \textbf{Z}_2 +...+\textbf{Z}_N
+        \end{equation*}
+        
+        
+\subsubsection*{Parallel Circuits}
+        
+        \begin{equation*}
+            \sum I_{\text{in}}= \sum I_{\text{out}} \hspace{15pt}  I_S=I_1+I_2+...+I_n               
+        \end{equation*}
+        
+        \begin{equation*}
+            I_S R_T=I_x R_x \hspace{10pt}   R_T=\frac{R_1R_2}{R_1+R_2} 
+        \end{equation*}
+        
+        \begin{equation*}
+            P_S=P_{R_1}+P_{R_2}+...+P_{R_n}
+        \end{equation*}
+        
+        \begin{equation*}
+            \frac{1}{R_T}=\frac{1}{R_1}+\frac{1}{R_2}+...+\frac{1}{R_n}
+        \end{equation*}
+        
+        \begin{equation*}
+            C_T=C_1+C_2+...+C_N
+        \end{equation*}
+        
+        \begin{equation*}
+            \frac{1}{L_T}=\frac{1}{L_1}+\frac{1}{L_2}+...+\frac{1}{L_N}
+        \end{equation*}
+        
+        \begin{equation*}
+            \frac{1}{\textbf{Z}_T} = \frac{1}{\textbf{Z}_1}+ \frac{1}{\textbf{Z}_2}  +...+\frac{1}{\textbf{Z}_N} 
+        \end{equation*}
+        
+        
+%\subsection*{Source Conversion}
+  
+
+\subsection*{Network Theorems}
+
+    \subsubsection*{Superposition}
+    \begin{enumerate}
+        \item Activate one source at a time
+        \begin{enumerate}
+            \item Voltage source: short it
+            \item Current source: open it
+        \end{enumerate}
+        \item Find \(I'_1\), \(I'_2\), etc.
+        \item Add I primes together to find current values
+    \end{enumerate}
+    
+    \subsubsection*{Mesh Current Analysis}
+    \begin{enumerate}
+        \item Assume current directions
+        \item Write an equation per loop using KVL
+        \item Solve for unknown current(s)/value(s)
+    \end{enumerate}
+    
+    \subsubsection*{Super Mesh}
+        \begin{center}
+                 *Only if you have a current source in the middle*
+        \end{center}
+        \begin{enumerate}
+            \item Asssume current directions 
+            \item Deactivate (open) the current source
+            \item Write one equation using both \(I_1\) and \(I_2\)
+            \item For the other equation, use the sum of \(I_1\) and \(I_2\)
+            \item Solve the system of equations
+        \end{enumerate}
+        
+    \subsubsection*{Nodal Analysis}
+    \begin{enumerate}
+        \item Determine the number of nodes 
+        \item Pick and label each node
+        \item Apply KCL at each node assuming each node has largest voltage value
+        \item Solve system of equations
+        
+    \end{enumerate}
+    
+    \subsubsection*{Super Node}
+        \begin{center}
+             *only if you have a voltage source preventing nodal analysis*
+        \end{center}
+        \begin{enumerate}
+            \item Short the source
+            \item Proceed as though nodal analysis would work
+            \item Solve the system of equations
+        \end{enumerate}
+    \subsubsection*{Thevenin's Theorem}
+        \begin{enumerate}
+            \item Identify and remove the load
+            \item Find \(\ R_{TH}\) by deactivating all sources simultaneously
+            \item Find \(\ V_{TH}\) across terminals from step 1
+            \item Draw the equivalent circuit
+        \end{enumerate}  
+        
+    \subsubsection*{Norton's Theorem}    
+    \begin{enumerate}
+        \item Identify and remove the load
+        \item Find \(\ R_N\) by deactivating all sources simultaneously
+        \item Find\(\ V_N \) by shorting terminals from step 1
+        \item Draw the equivalent Norton circuit 
+    \end{enumerate}
+        
+\end{document}

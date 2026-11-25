@@ -31,6 +31,7 @@ I do, however, claim credit for every falsehood and typo included.
 - [Intro to Robotics](intro_to_robotics.md)
 - [Intro to Optimization](intro_to_optimization.md)
 - [Robot Control](robot_control.md)
+- [Nonlinear Control](nonlinear_control.md)
 - [Intro to Astrodynamics](intro_to_astrodynamics.md)
 
 

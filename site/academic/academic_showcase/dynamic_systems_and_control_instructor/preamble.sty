@@ -1,0 +1,35 @@
+% Document page size and margins
+\usepackage[letterpaper,top=0.75in,bottom=0.75in,left=0.75in,right=0.75in,marginparwidth=1.75cm]{geometry}
+
+% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{bm,dsfont}
+
+% Figures and images
+\usepackage{float, graphicx}
+\usepackage{subcaption}
+
+% Other 
+\usepackage{booktabs} % nicer table environments
+\usepackage{comment} % allows block comments
+\usepackage{enumitem} % Allows overwriting of enumeration labels
+
+% Header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}%
+\headheight 30pt%
+\lhead{\textbf{\courseName}}%
+\chead{\textbf{\assignmentTypeAndNumber}}%
+\rhead{\textbf{\semester}}%
+\lfoot{}%
+\cfoot{\thepage}%
+\rfoot{}%
+\headsep 10pt%
+
+% Overwrite the maximum number of floats permitted in each area
+\setcounter{totalnumber}{8}
+\setcounter{topnumber}{8}
+\setcounter{bottomnumber}{8}

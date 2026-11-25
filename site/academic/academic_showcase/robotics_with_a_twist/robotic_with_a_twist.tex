@@ -1,0 +1,436 @@
+\documentclass[twocolumn]{article}    % two-column because cheat sheets fit like that
+% \usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, mathtools} 
+\usepackage{bm, dsfont}
+\usepackage{float, graphicx}
+\usepackage{comment} % allows block comments to occur
+\usepackage{ragged2e}
+\usepackage{geometry}
+\geometry{letterpaper, total={4.8in, 2.8in}}      
+
+\begin{document}
+\pagestyle{empty}
+\footnotesize 
+\RaggedRight
+
+\subsection*{Robotics With a Twist}
+\begin{equation*}
+    \operatorname{DOF}_r = 6(n_{\text{links}} - 1 - n_{\text{joints}}) + \Sigma_{i}^{n_{\text{joints}}} \operatorname{DOF}_i
+\end{equation*}
+Homo.\{Point:\(\begin{bmatrix} \bm{p}^T & 1 \end{bmatrix}^T\) Vector:\(\begin{bmatrix} \bm{v}^T & 0\end{bmatrix}^T\)\}\\
+\begin{equation*}
+    \prescript{0}{}{\bm{T}}_n(\bm{\theta}) = \operatorname{exp}(\bm{\Xi}_1\theta_1) \cdots \operatorname{exp}(\bm{\Xi}_n\theta_n) \prescript{0}{}{\bm{T}}_n(\bm{0})
+\end{equation*}
+\begin{equation*}
+    x(t) = \sum_{i=0}^n a_it^i \hspace{10pt} t_0 \leq t\leq t_1
+\end{equation*}
+\begin{equation*}
+    \prescript{0}{}{\bm{R}}_1 \prescript{1}{}{\bm{R}}_2 = \prescript{0}{}{\bm{R}}_2 \hspace{2.5pt} \implies \hspace{2.5pt} \bm{R}_t(t) = \prescript{0}{}{\bm{R}}_1\bm{R}(\bm{k}\theta(t))
+\end{equation*}
+\noindent\underline{Angle Axis}
+\begin{align*}
+    \bm{R} &=\operatorname{exp}(\bm{S}(\bm{k}\theta))\\
+    &= \bm{I} + s\theta \bm{S}(\bm{k}) + \bm{S}^2(\bm{k})(1-c\theta) \\
+    &= \bm{I}c\theta + s\theta\bm{S}(\bm{k}) + \bm{kk}^T(1-c\theta)
+\end{align*}
+\begin{equation*}
+    c\theta = \frac{\operatorname{Tr} \left(\bm{R} \right)-1}{2} \hspace{20pt}     \bm{k} = \frac{1}{2s\theta} \begin{bmatrix}
+        r_{32} -r_{23}\\
+        r_{13} -r_{31}\\
+        r_{21} -r_{12}
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    s\theta =  \pm \frac{1}{2} \begin{pmatrix}\quad(r_{32} - r_{23})^2\\ 
+    + (r_{13}-r_{31})^2\\
+    +(r_{21} -r_{12})^2 
+    \end{pmatrix}^{1/2}
+\end{equation*}
+% \vfill
+% \begin{center}    
+%     Levi Barker \hspace{82pt} U0959362 \\ \vspace{2pt}
+%     \hrule
+%     \vspace{2pt}
+%     Robot 7960 \hspace{85pt} Fall 2025
+% \end{center}
+
+\newpage
+\noindent\underline{Homogeneous Transform \(\longrightarrow\) Twist}\\
+Let \(\bm{T} =\begin{bmatrix}
+    \bm{R} & \bm{d} \\ \bm{0}^T & 1
+\end{bmatrix}\) known.\\
+\textbf{if} \(\bm{R} = \bm{I}\) and \(\bm{d} \neq \bm{0}\):
+\begin{equation*}
+    \bm{\xi} = \begin{bmatrix}
+        \bm{d} \\ \bm{0}
+    \end{bmatrix} \hspace{30pt} \bm{\Xi} = \begin{bmatrix}
+        \bm{0} & \bm{d} \\ \bm{0}^T & 0
+    \end{bmatrix}
+\end{equation*}
+\textbf{elif} \(\bm{R} \neq \bm{I}\) and \(\bm{d} = \bm{0}\):
+
+\hspace{10pt}Extract \(\bm{k}\) and \(\theta\) using angle-axis
+\begin{equation*}
+    \bm{\xi} = \begin{bmatrix}
+        \bm{0} \\ \bm{k}
+    \end{bmatrix}\theta \hspace{30pt} \bm{\Xi} = \begin{bmatrix}
+        \bm{S}(\bm{k}\theta) & \bm{0} \\ \bm{0}^T & 0
+    \end{bmatrix}
+\end{equation*}
+\textbf{else:}\\
+\hspace{10pt}Extract \(\bm{k}\) and \(\theta\) using angle-axis
+\begin{equation*}
+    \bm{v} = \left[ \frac{1}{\theta} (\bm{I} - \bm{R})\bm{S}(\hat{\bm{k}}) + \hat{\bm{k}}\hat{\bm{k}}^T \right]^{-1}\bm{d}
+\end{equation*}
+\begin{equation*}
+    \bm{\xi} = \begin{bmatrix}
+        \bm{v} \\ \bm{k}
+    \end{bmatrix}\theta \hspace{30pt} \bm{\Xi} = \begin{bmatrix}
+        \bm{S}(\bm{k}\theta) & \bm{v} \\ \bm{0}^T & 0 
+    \end{bmatrix}
+\end{equation*}
+\vfill
+\begin{center}    
+    Levi Barker \hspace{82pt} U0959362 \\ \vspace{2pt}
+    \hrule
+    \vspace{2pt}
+    Robot 7960 \hspace{85pt} Fall 2025
+\end{center}
+
+\newpage
+\noindent\underline{Homogeneous Transform \(\longrightarrow\) Screw}\\
+Let \(\bm{T} =\begin{bmatrix}
+    \bm{R} & \bm{d} \\ \bm{0}^T & 1
+\end{bmatrix}\) known.\\
+Do HT \(\longrightarrow\) Twist, and get \(\bm{v}\), \(\bm{k}\), \(\theta\). Then 
+\begin{equation*}
+    h = (\bm{k}^T\bm{v})/\theta \hspace{30pt} \bm{q} =  (\bm{k}\times \bm{v})/ \theta
+\end{equation*}
+
+\noindent\underline{Screw \(\longrightarrow\) Twist}\\
+Let \(\bm{q},\, \bm{k},\,h,\) and \(\theta\) known.\\
+\textbf{if} \(h= \infty\):\\
+\begin{equation*}
+    \bm{v} = \bm{q} \times \bm{k} \hspace{10pt} \bm{\xi} = \begin{bmatrix}
+        \bm{v} \\ \bm{0}
+    \end{bmatrix} \hspace{10pt} \bm{\Xi} = \begin{bmatrix}
+        \bm{0} & \bm{v} \\  \bm{0}^T & 0
+    \end{bmatrix}
+\end{equation*}
+\textbf{else:}
+\begin{equation*}
+    \bm{\xi} = \begin{bmatrix}
+        \bm{q} \times \bm{k} + \bm{k}h \\ \bm{k}
+    \end{bmatrix} \theta = \begin{bmatrix}
+        \bm{v} \\ \bm{k}
+    \end{bmatrix}\theta  \hspace{20pt} \bm{\Xi} = \bm{\xi}^{\wedge}
+\end{equation*}
+
+
+\noindent\underline{Twist \(\longrightarrow\) Screw}\\
+Let \(\bm{\Xi} = \begin{bmatrix}
+    \bm{S}(\bm{k}\theta) & \bm{v} \\ \bm{0}^T & 0 
+\end{bmatrix}\) known.\\
+\hspace{10pt}Extract \(\bm{k}\), \(\theta\), and \(\bm{v}\) from \(\bm{\Xi}\)
+\begin{equation*}
+    h = (\bm{k}^T\bm{v})/\theta \hspace{30pt} \bm{q} =  (\bm{k}\times \bm{v})/ \theta
+\end{equation*}
+
+\noindent\underline{Screw \(\longrightarrow\) Homogeneous Transform}\\
+Let \(\bm{q},\, \bm{k},\,h,\) and \(\theta\) known.\\
+\textbf{if} \(h=\infty\):
+\begin{equation*}
+    \bm{T} = \begin{bmatrix}
+        \bm{I} & \bm{v} \\ \bm{0}^T & 1
+    \end{bmatrix}
+\end{equation*}
+\textbf{else:}
+\begin{equation*}
+    \bm{T} = \begin{bmatrix}
+        \operatorname{exp}(\bm{S}(\bm{k}\theta)) & (\bm{I} - \operatorname{exp}(\bm{S}(\bm{k}\theta))\bm{q} + h\theta\bm{k} \\ \bm{0}^T & 1
+    \end{bmatrix}
+\end{equation*}
+
+\noindent\underline{Twist \(\longrightarrow\) Homogeneous Transform}\\
+Let \(\bm{\Xi} = \begin{bmatrix}
+    \bm{S}(\bm{k}\theta) & \bm{v} \\ \bm{0}^T & 0 
+\end{bmatrix}\) known.\\
+\begin{equation*}
+    \bm{T} = \operatorname{exp}(\bm{\Xi})
+\end{equation*}
+
+\vfill
+\begin{center}    
+    Levi Barker \hspace{82pt} U0959362 \\ \vspace{2pt}
+    \hrule
+    \vspace{2pt}
+    Robot 7960 \hspace{85pt} Fall 2025
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\noindent\underline{Velocity and updates}
+\begin{equation*}
+    \prescript{s}{}{\dot{\bm{R}}}_b = \bm{S}(\prescript{s}{}{\bm{\omega}}_{sb}) \prescript{s}{}{\bm{R}}_b = \prescript{s}{}{\bm{R}}_b \bm{S}(\prescript{b}{}{\bm{\omega}}_{sb}) 
+\end{equation*}
+\begin{align*}    
+    \prescript{s}{}{\bm{R}}_{sb}(t+dt)  &= \operatorname{exp}(\bm{S}(\prescript{s}{}{\bm{\omega}}_{sb} dt))\prescript{s}{}{\bm{R}}_b(t)\\
+    &= \prescript{s}{}{\bm{R}}_b(t) \operatorname{exp}(\bm{S}(\prescript{b}{}{\bm{\omega}}_{sb} dt))
+\end{align*}\begin{equation*}
+    \prescript{s}{}{\dot{\bm{T}}}_b = \prescript{s}{}{\bm{\Xi}}_{ss} \prescript{s}{}{\bm{T}}_b = \prescript{s}{}{\bm{T}}_b \prescript{b}{}{\bm{\Xi}}_{sb} 
+\end{equation*}
+\begin{align*}
+    \prescript{s}{}{\bm{T}}_b(t+dt) &= \operatorname{exp}(\prescript{s}{}{\bm{\Xi}}_{ss}dt) \prescript{s}{}{\bm{T}}_b(t)\\
+    &= \prescript{s}{}{\bm{T}}_b(t) \operatorname{exp}(\prescript{b}{}{\bm{\Xi}}_{sb}dt) 
+\end{align*}
+\begin{equation*}
+    \dot{\bm{q}} = \frac{1}{2}\begin{bmatrix}
+        -\text{q}^T\\ -\bm{S}(\text{q}) + q_0\bm{I}
+    \end{bmatrix}\bm{\omega} = \frac{1}{2}\begin{bmatrix}
+        0 &-\bm{\omega}^T\\ \bm{\omega} & \bm{S}(\bm{\omega})
+    \end{bmatrix} \bm{q}
+\end{equation*}
+\begin{equation*}
+    \bm{q}(t+dt) = \bm{q}(t) +\dot{\bm{q}}(t)dt
+\end{equation*}
+\vfill
+\begin{center}    
+    Levi Barker \hspace{82pt} U0959362 \\ \vspace{2pt}
+    \hrule
+    \vspace{2pt}
+    Robot 7960 \hspace{85pt} Fall 2025
+\end{center}
+
+\newpage
+\noindent\underline{Spatial Jacobian \(\bm{J}_s\)}
+\begin{equation*}
+    \begin{bmatrix}
+        \prescript{0}{}{\dot{\bm{d}}_{00}} & \prescript{0}{}{\bm{\omega}}_{0n}^T
+    \end{bmatrix}^T =  \bm{J}_s \dot{\bm{\theta}} 
+\end{equation*}
+\begin{equation*}
+    \bm{J}_s = \begin{bmatrix}
+        \bm{\xi}_1 & \bm{\xi}_2' & \cdots & \bm{\xi}_n'
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \bm{\xi}_{is}' = A[\operatorname{exp}(\bm{\Xi}_1\theta_1)\cdots \operatorname{exp}(\bm{\Xi}_{i-1}\theta_{i-1})]\bm{\xi}_i
+\end{equation*}
+\noindent\underline{Velocity Jacobian \(\bm{J}_v\)}
+\begin{equation*}
+    \begin{bmatrix}
+        \prescript{0}{}{\dot{\bm{d}}_{0n}^T} & \prescript{0}{}{\bm{\omega}}_{0n}^T
+    \end{bmatrix}^T = \bm{J}_v\dot{\bm{\theta}} \hspace{15pt} \text{prism.}\begin{bmatrix}
+        \prescript{0}{}{\bm{z}}_{i-1} \\ \bm{0}
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \bm{J}_v = \begin{bmatrix}
+        \prescript{0}{}{\bm{z}}_0 \times \prescript{0}{}{\bm{d}}_{0n} & \dots & \prescript{0}{}{\bm{z}}_{n-1} \times \prescript{0}{}{\bm{d}}_{n-1,n}\\
+        \prescript{0}{}{\bm{z}}_0 & \dots & \prescript{0}{}{\bm{z}}_{n-1}
+    \end{bmatrix} 
+\end{equation*}
+\noindent\underline{Body Jacobian \(\bm{J}_b\)}
+\begin{equation*}
+    \begin{bmatrix}
+        \prescript{n}{}{\dot{\bm{d}}_{0n}} & \prescript{n}{}{\bm{\omega}}_{0n}^T
+    \end{bmatrix}^T = \bm{J}_b \dot{\bm{\theta}}
+\end{equation*}
+\begin{equation*}
+    \bm{J}_b = \begin{bmatrix}
+        \bm{\xi}_1' & \cdots & \bm{\xi}_n'
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \hspace{-1pt} \bm{\xi}_{ib}' = A^{-1}[\operatorname{exp}(\bm{\Xi}_i\theta_i)\cdots \operatorname{exp}(\bm{\Xi}_n\theta_n)\prescript{0}{}{\bm{T}}_n(\bm{0})]\bm{\xi}_i
+\end{equation*}
+
+\newpage
+\noindent\underline{Jacobian Conversions}
+\begin{equation*}
+    \prescript{\alpha}{}{\bm{\xi}}_{\beta} = \begin{bmatrix}
+        \prescript{\alpha}{}{\bm{v}}_{\beta} \\ \prescript{\alpha}{}{\bm{\omega}}_{\beta}
+    \end{bmatrix} \hspace{5pt} (\alpha,\,\beta) \in \left\{\begin{matrix}
+        (s,\,sb) & \text{trad.}\\
+        (b,\,sb) & \text{body}\\
+        (s,\,ss) & \text{spatial}
+    \end{matrix}\right\}
+\end{equation*}
+\begin{equation*}
+    \bm{J}_v = \begin{bmatrix}
+        \prescript{s}{}{\bm{R}}_b & \bm{0}\\ \bm{0} & \prescript{s}{}{\bm{R}}_b
+    \end{bmatrix}\bm{J}_b \hspace{10pt} \bm{J}_s = A(\prescript{s}{}{\bm{T}}_n)\bm{J}_b
+\end{equation*}
+\begin{align*}
+    \prescript{s}{}{\bm{\xi}}_{ss} &= \begin{bmatrix}
+        \prescript{s}{}{\bm{R}}_b & \bm{S}(\prescript{s}{}{\bm{d}_{sb})\prescript{s}{}{\bm{R}}_b}\\
+        \bm{0} & \prescript{}{}{\bm{R}}_b
+    \end{bmatrix}\prescript{b}{}{\bm{\xi}}_{sb}\\
+    &= A(\prescript{s}{}{\bm{T}}_b) \prescript{b}{}{\bm{\xi}}_{sb}
+\end{align*}
+\begin{align*}
+    A(\prescript{s}{}{\bm{T}}_b) = \begin{bmatrix}
+        \prescript{s}{}{\bm{R}}_b & \bm{S}(\prescript{s}{}{\bm{d}}_{sb}) \prescript{s}{}{\bm{R}}_b \\ \bm{0} & \prescript{s}{}{\bm{R}}_b
+    \end{bmatrix}
+\end{align*}
+\begin{align*}
+        A^{-1}(\prescript{s}{}{\bm{T}}_b) &= \begin{bmatrix}
+        \prescript{s}{}{\bm{R}}_b^T & -\prescript{s}{}{\bm{R}}_b^T\bm{S}(\prescript{s}{}{\bm{d}_{sb}}) \\ \bm{0} & \prescript{s}{}{\bm{R}}_b^T
+    \end{bmatrix}\\ 
+    &= A(\prescript{s}{}{\bm{T}}_b^{-1})
+\end{align*}
+
+\newpage
+\noindent\underline{Singular Value Decomposition}
+\begin{equation*}
+    \bm{A} = \bm{U\Sigma V}^T \hspace{4.5pt} \bm{A}^\dagger = \bm{V\Sigma}^\dagger\bm{U}^T = (\bm{A}^T\bm{A})^{-1}\bm{A}^T
+\end{equation*}
+\begin{equation*}
+    \kappa(\bm{A}) = \frac{\sigma_\text{max}(\bm{A})}{\sigma_\text{min}(\bm{A})} \in [1,\,\infty) \hspace{10pt} \kappa^{-1} \in [0,\,1]
+\end{equation*}
+\begin{equation*}
+    \bm{AN} = \bm{A}[\bm{I} - \bm{A}^T (\bm{AA}^T)^\dagger\bm{A}]
+\end{equation*}
+\begin{equation*}
+    \dot{\bm{\theta}} = \bm{W}_{\text{in}} (\bm{W}_{\text{out}} \bm{J} \bm{W}_{\text{in}})^\dagger \bm{W}_{\text{out}} \bm{\xi}_{\text{des}}
+\end{equation*}
+\noindent\underline{Properties of Vector Quantities}
+\begin{equation*}
+    \bm{a}\cdot(\bm{b}\times\bm{c}) = (\bm{a}\times\bm{b})\cdot\bm{c} 
+\end{equation*}
+\begin{equation*}
+    \bm{a}\times(\bm{b}\times\bm{c}) = (\bm{a}\cdot\bm{c})\bm{b} - (\bm{a}\cdot\bm{b})\bm{c}
+\end{equation*}
+\begin{equation*}
+    \bm{S}^2(\bm{k}) = \bm{kk}^T - \bm{I} \hspace{10pt}  \text{if} \hspace{10pt} \|\bm{k}\|= 1
+\end{equation*}
+\vfill
+\begin{center}    
+    Levi Barker \hspace{82pt} U0959362 \\ \vspace{2pt}
+    \hrule
+    \vspace{2pt}
+    Robot 7960 \hspace{85pt} Fall 2025
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%
+\newpage
+\noindent\underline{Conservation of Power (Statics)}
+\begin{align*}
+    p &= \dot{\bm{\theta}}^T\bm{\tau} \\
+    &= -\dot{\bm{\theta}}^T\bm{J}_v^T\prescript{0}{}{\bm{w}}_n \\
+    &= -\dot{\bm{\theta}}^T\bm{J}_b^T\prescript{n}{}{\bm{w}}_n 
+\end{align*}
+\noindent\underline{Gravity Balance}
+\begin{align*}
+    \bm{\tau} &= -\sum_{i=1}^n \bm{J}_{vi}^T\begin{bmatrix}
+        \bm{I} \\ \bm{S}(\prescript{0}{}{\bm{r}}_{i,COMi})
+    \end{bmatrix} \prescript{0}{}{\bm{g}}m_i \\
+    &= -\sum_{i=1}^n \bm{J}_{bi}^T\begin{bmatrix}
+        \bm{I} \\ \bm{S}(\prescript{i}{}{\bm{r}}_{i,COMi})
+    \end{bmatrix} \prescript{i}{}{\bm{g}}m_i
+\end{align*}
+\vfill
+\begin{center}    
+    Levi Barker \hspace{82pt} U0959362 \\ \vspace{2pt}
+    \hrule
+    \vspace{2pt}
+    Robot 7960 \hspace{85pt} Fall 2025
+\end{center}
+
+
+\newpage
+\noindent\underline{Dynamics}
+\begin{align*}
+    &\bm{L}_{0i} = \bm{q}_{0,i} \times m_i(\bm{\omega}_{0i} \times \bm{q}_{0,i}) = \bm{I}_{0i} \bm{\omega}_{0i}\\
+    &= \left[\sum_{k=1}^N(m_{ik}\|\bm{q}_{0,ik})\|^2\bm{I} - m_{ik}\bm{q}_{0,ik}\bm{q}_{0,ik}^T\right]\bm{\omega}_{0i}
+\end{align*}
+\begin{equation*}
+    \bm{I}_{0i} = \bm{I}_i + m_i(\|\bm{r}_{01}\|^2\bm{I} - \bm{r}_{0i}\bm{r}_{0i}^T)
+\end{equation*}
+\begin{equation*}
+    \prescript{0}{}{\bm{I}}_i = \prescript{0}{}{\bm{R}}_i \prescript{i}{}{\bm{I}}_{i} \prescript{0}{}{\bm{R}}_i^T
+\end{equation*}
+\begin{equation*}
+    \prescript{0}{}{\bm{w}}_i = \begin{bmatrix}
+        m_i\bm{I} & \bm{0} \\ \bm{0} & \prescript{0}{}{\bm{I}}_i
+    \end{bmatrix} \prescript{0}{}{\dot{\bm{\xi}}}_{0i} + \begin{bmatrix}
+        \bm{0} \\ \prescript{0}{}{\bm{\omega}}_{0i} \times \prescript{0}{}{\bm{I}}_i \prescript{0}{}{\bm{\omega}}_{0i}
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \prescript{i}{}{\bm{w}}_i = \begin{bmatrix}
+        m_i\bm{I} & \bm{0} \\ \bm{0} & \prescript{i}{}{\bm{I}}_i
+    \end{bmatrix} \prescript{i}{}{\dot{\bm{\xi}}}_{0i} + \begin{bmatrix}
+        \prescript{i}{}{\bm{\omega}}_{0i} \times m_i \prescript{i}{}{\bm{v}}_{0i} \\ 
+        \prescript{i}{}{\bm{\omega}}_{0i} \times \prescript{i}{}{\bm{I}}_i \prescript{i}{}{\bm{\omega}}_{0i}
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \bm{\xi}_{0i}(t+\delta t) \approx \bm{\xi}_{0i}(t) + \dot{\bm{\xi}}_{0i}(t) \delta t
+\end{equation*}
+
+\newpage
+\noindent\underline{Lagrangian Dynamics}
+\begin{equation*}
+    \mathcal{L} = \mathcal{T} - \mathcal{V} \quad \quad \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{\theta_i}} - \frac{\partial \mathcal{L}}{\partial \theta_i} = \Upsilon_i =\tau_i -\beta_i\dot{\theta}_i
+\end{equation*}
+\begin{equation*}
+    \mathcal{T}_i = \frac{1}{2} \dot{\bm{\theta}}^T \bm{J}_{b,Q_i}^T \mathds{M}_i\bm{J}_{b,Q_i}\dot{\bm{\theta}} 
+    \quad K_r = \frac{1}{2}\bm{\omega}_{0i} \cdot \bm{I}_{0i}\bm{\omega}_{0i}
+\end{equation*}
+\begin{equation*}
+    \hspace{-2pt} \mathcal{T} = \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n \bm{M}_{ij} \dot{\bm{\theta}}_i\dot{\bm{\theta}}_j \quad \mathds{M}_i = \begin{bmatrix}
+        m_i\bm{I} & \bm{0} \\ \bm{0} & \prescript{i}{}{\bm{I}}_i
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \bm{M}(\bm{\theta}) = \sum_{i=1}^n \bm{J}_{b,Q_i}^T\mathds{M}_i \bm{J}_{b,Q_i} = \{\bm{M}_{ij}\}
+\end{equation*}
+\begin{equation*}
+    \mathcal{V}_i = m_i\|\bm{g}\|h(\bm{\theta}) \quad\quad \mathcal{V} = \Sigma_{i=1}^n\mathcal{V}_i
+\end{equation*}
+\begin{equation*}
+    \bm{N}_i = \partial \mathcal{V} /\partial \theta_i + \beta_i\dot{\bm{\theta}}_i \quad \quad \bm{C}_{ij} = \Sigma_{k=1}^n \bm{\Gamma}_{ijk} \dot{\bm{\theta}}_k 
+\end{equation*}
+\begin{equation*}
+    \bm{\Gamma}_{ijk} = \frac{1}{2}\left(\frac{\partial \bm{M}_{ij}}{\partial \theta_k} + \frac{\partial \bm{M}_{ik}}{\partial \theta_j} - \frac{\partial \bm{M}_{kj}}{\partial \theta_i} \right)
+\end{equation*}
+\begin{align*}
+    &\bm{M}(\bm{\theta}) \ddot{\bm{\theta}} + \bm{C}(\bm{\theta},\, \dot{\bm{\theta}})\dot{\bm{\theta}} + \bm{N}(\bm{\theta},\,\dot{\bm{\theta}}) = \bm{\tau} \\
+    &\bm{M}(\bm{\theta})\ddot{\bm{\theta}}+ (\bm{C}(\bm{\theta}, \dot{\bm{\theta}}) + \bm{B}) \dot{\bm{\theta}} = \bm{\tau}' = \bm{\tau} - \bm{G}(\bm{\theta})
+\end{align*}
+\noindent\underline{Parallel Robots}
+\begin{equation*}
+    \begin{bmatrix}
+        \bm{J}_1 & -\bm{J}_2 & & & \\
+        & & \ddots & & \\
+        & & & \bm{J}_{m-1} & -\bm{J}_m
+    \end{bmatrix} \begin{bmatrix}
+        \dot{\bm{\theta}} \\ \vdots \\ \dot{\bm{\theta}}_m 
+    \end{bmatrix} = \bm{0}  
+\end{equation*}
+\begin{equation*}
+    \begin{bmatrix}
+        \dot{\bm{\theta}}_a^T &  \dot{\bm{\theta}}_p^T
+    \end{bmatrix}^T = \bm{B}^{-1}\dot{\bm{\theta}} \quad \quad\bm{C}_a\dot{\bm{\theta}}_a + \bm{C}_p\dot{\bm{\theta}}_p = \bm{0}
+\end{equation*}
+\textbf{if} \(\bm{C}_p\bm{C}_p^\dagger\bm{C}_a = \bm{C}_a\):\\
+
+\hspace{10pt} Then build \(\bm{\xi}\) from \(\dot{\bm{\theta}}_a\) from an active joint, and the rest using 
+\begin{equation*}
+    \dot{\bm{\theta}}_p  = - \bm{C}_p^\dagger\bm{C}_a \dot{\bm{\theta}}_a = \bm{A} \dot{\bm{\theta}}_a
+\end{equation*}
+\textbf{else:}
+\begin{center}
+    \vspace{-5pt}panic.
+\end{center}
+\vfill
+\begin{center}    
+    Levi Barker \hspace{82pt} U0959362 \\ \vspace{2pt}
+    \hrule
+    \vspace{2pt}
+    Robot 7960 \hspace{85pt} Fall 2025
+\end{center}
+\end{document}

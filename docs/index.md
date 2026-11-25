@@ -24,7 +24,7 @@ I'm currently a Ph.D. student in the [Magnetic & Medical Robotics Lab](https://m
 The working title of my dissertation is "*Linear Modeling and Model-based Manipulation of Conductive Nonmagnetic Objects Using Magnetic Induction*."
 
 #### Personally
-I love reading, playing with my dog, and exploring what the world has to offer.
+I love reading, playing with my dog Rhubarb, and exploring what the world has to offer.
 
 In my free time, I enjoy solving variant sudoku puzzles, studying Mandarin Chinese, and hiking.
 
